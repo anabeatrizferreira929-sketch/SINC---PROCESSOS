@@ -1,0 +1,784 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17" compressed="false">
+  <diagram id="processo" name="AS-IS">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="14580" pageHeight="3612" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" vertex="1" value="Transportadora — operação, cliente e apoios | AS-IS&#10;BPM · Raias horizontais · padrão 1.0" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;text;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;align=left;">
+          <mxGeometry x="40" y="20" width="14500" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="supervisor" value="Supervisor Comercial" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="110" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="faturista-gerente" value="Faturista e Gerente (tanque)" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="350" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="assistente" value="Assistente Comercial" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="590" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="faturista" value="Faturista" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="830" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="motorista-embarcador" value="Motorista e Embarcador" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="1070" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="operacao" value="Responsável pela operação" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="1310" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="motorista" value="Motorista" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="1550" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="analista-administrativa" value="Analista Administrativa" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="1790" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="faturamento" value="Faturamento" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="2030" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="credito-cobranca" value="Crédito e Cobrança" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="2270" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="jornada" value="Analista de Logística/Jornada" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="2510" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="manutencao" value="Manutenção" parent="1" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;swimlane;horizontal=0;startSize=180;swimlaneLine=1;fillColor=#F1F5F9;swimlaneFillColor=#FFFFFF;strokeColor=#94A3B8;fontStyle=1;collapsible=0;">
+          <mxGeometry x="40" y="2750" width="14500" height="240" as="geometry" />
+        </mxCell>
+        <object id="inicio-demanda" label="INÍCIO&#10;Oportunidade ou programação de carga" tipo="inicio" estado="extraido" evidencias="F001, p.3, P01: «Gerar demanda e manter os veículos em operação»" gaps="" detalhes="" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#DCFCE7;strokeColor=#166534;strokeWidth=2;">
+            <mxGeometry x="220" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-captar-cargas" label="ATIVIDADE&#10;Receber e captar cargas&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.3, P01: «Gerar demanda e manter os veículos em operação»" gaps="gap-atividade-captar-cargas-custo; gap-atividade-captar-cargas-controle" detalhes="Recepção/captação pelo Supervisor; origens: cliente, Diretoria e Compras, conforme P01.&#10;5W2H: {&quot;what&quot;: &quot;Receber e captar cargas&quot;, &quot;who&quot;: &quot;Supervisor Comercial&quot;, &quot;why&quot;: &quot;Gerar demanda e manter veículos em operação&quot;, &quot;where&quot;: &quot;WhatsApp, contatos, visitas e grupos&quot;, &quot;when&quot;: &quot;Conforme oportunidades e programações recorrentes&quot;, &quot;how&quot;: &quot;Rede de contatos e visitas; couro: cliente define volume; piso: Diretoria envia carga de retorno; combustível dos postos: Compras envia programação no grupo; recorte: Recepção/captação pelo Supervisor; origens: cliente, Diretoria e Compras, conforme P01.&quot;, &quot;qty&quot;: &quot;Não mensurado; valor depende do frete&quot;}" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="500" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-operacao-tanque" label="DECISÃO&#10;Operação de tanque?" tipo="decisao" estado="extraido" evidencias="F001, p.3, P02: «Margem mínima: 40%;»" gaps="" detalhes="Roteamento visual da responsabilidade já definida por modalidade; não representa nova aprovação." papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="780" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-avaliar-viabilidade-geral" label="ATIVIDADE&#10;Avaliar viabilidade e negociar — geral" tipo="atividade" estado="extraido" evidencias="F001, p.3, P02: «Margem mínima: 40%;»" gaps="" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Avaliar viabilidade e negociar&quot;, &quot;who&quot;: &quot;Supervisor Comercial&quot;, &quot;why&quot;: &quot;Evitar operações sem retorno financeiro&quot;, &quot;where&quot;: &quot;Ferramentas de rota, referências ANTT e controles de cálculo&quot;, &quot;when&quot;: &quot;Antes da confirmação do frete&quot;, &quot;how&quot;: &quot;Calcular distância, pedágio, combustível e despesas; negociar; fechar somente com resultado ≥40%&quot;, &quot;qty&quot;: &quot;Margem mínima: 40%; custos variáveis&quot;}" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="1060" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-avaliar-viabilidade-tanque" label="ATIVIDADE&#10;Avaliar viabilidade e negociar — tanque" tipo="atividade" estado="extraido" evidencias="F001, p.3, P02: «Margem mínima: 40%;»" gaps="" detalhes="Responsabilidade conjunta Faturista + Gerente, conforme P02. Não separar uma decisão conjunta artificialmente.&#10;5W2H: {&quot;what&quot;: &quot;Avaliar viabilidade e negociar&quot;, &quot;who&quot;: &quot;Faturista e Gerente (tanque)&quot;, &quot;why&quot;: &quot;Evitar operações sem retorno financeiro&quot;, &quot;where&quot;: &quot;Ferramentas de rota, referências ANTT e controles de cálculo&quot;, &quot;when&quot;: &quot;Antes da confirmação do frete&quot;, &quot;how&quot;: &quot;Calcular distância, pedágio, combustível e despesas; negociar; fechar somente com resultado ≥40%; recorte: Responsabilidade conjunta Faturista + Gerente, conforme P02. Não separar uma decisão conjunta artificialmente.&quot;, &quot;qty&quot;: &quot;Margem mínima: 40%; custos variáveis&quot;}" papel="">
+          <mxCell parent="faturista-gerente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="1340" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-margem-minima" label="DECISÃO&#10;Resultado igual ou superior a 40%?&#10;[INFERIDO] [GAP]" tipo="decisao" estado="inferido" evidencias="F001, p.3, P02: «Margem mínima: 40%;»" gaps="gap-decisao-margem-minima-responsavel" detalhes="Critério extraído. A raia do Supervisor para o ponto de convergência é inferida; para tanque a análise permanece com Faturista + Gerente. Não atribuir alçada adicional." papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="1620" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="fim-frete-nao-fechado" label="FIM&#10;Frete não fechado" tipo="fim" estado="extraido" evidencias="F001, p.3, P02: «Margem mínima: 40%;»" gaps="" detalhes="Abaixo de 40% o frete não é fechado (p.2). Não inventado retorno para renegociação." papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#E2E8F0;strokeColor=#334155;strokeWidth=2;">
+            <mxGeometry x="1900" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-definir-frota" label="ATIVIDADE&#10;Definir frota própria ou terceiro&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.3, P03: «Consulta disponibilidade da frota própria.»" gaps="gap-atividade-definir-frota-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Definir frota própria ou terceiro&quot;, &quot;who&quot;: &quot;Supervisor Comercial&quot;, &quot;why&quot;: &quot;Alocar recurso adequado à carga&quot;, &quot;where&quot;: &quot;Planilha da frota e canais comerciais&quot;, &quot;when&quot;: &quot;Após oportunidade e antes do repasse operacional&quot;, &quot;how&quot;: &quot;Consultar disponibilidade; buscar terceiro se frota não atender ou se a estratégia exigir&quot;, &quot;qty&quot;: &quot;Não mensurado&quot;}" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="2180" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-terceirizar" label="DECISÃO&#10;Operação será terceirizada?" tipo="decisao" estado="extraido" evidencias="F001, p.3, P03: «Consulta disponibilidade da frota própria.»" gaps="" detalhes="" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="2460" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-buscar-terceiro" label="ATIVIDADE&#10;Buscar e negociar terceiro&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.3, P04: «Frete variável; plano Fretebras sujeito a limite»" gaps="gap-atividade-buscar-terceiro-controle" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Buscar e negociar terceiro&quot;, &quot;who&quot;: &quot;Supervisor Comercial&quot;, &quot;why&quot;: &quot;Atender demandas sem veículo próprio disponível&quot;, &quot;where&quot;: &quot;Fretebras, rede de contatos e visitas&quot;, &quot;when&quot;: &quot;Quando a operação será terceirizada&quot;, &quot;how&quot;: &quot;Localizar prestador, negociar carga/veículo e concluir definições antes do repasse&quot;, &quot;qty&quot;: &quot;Frete variável; plano Fretebras sujeito a limite&quot;}" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="2740" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-repassar-operacao" label="ATIVIDADE&#10;Repassar operação definida&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.3, P05: «Somente após carga e veículo estarem definidos»" gaps="gap-atividade-repassar-operacao-custo; gap-atividade-repassar-operacao-metodo; gap-atividade-repassar-operacao-controle" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Repassar operação definida&quot;, &quot;who&quot;: &quot;Supervisor Comercial&quot;, &quot;why&quot;: &quot;Iniciar documentação/programação sem transferir busca incompleta&quot;, &quot;where&quot;: &quot;Grupo de WhatsApp&quot;, &quot;when&quot;: &quot;Somente após carga e veículo definidos&quot;, &quot;how&quot;: &quot;Encaminhar contato e informações da carga ou veículo&quot;, &quot;qty&quot;: &quot;Sem custo direto mensurado&quot;}" papel="">
+          <mxCell parent="supervisor" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="3020" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-programar-terceiro" label="DECISÃO&#10;Operação de terceiro?" tipo="decisao" estado="extraido" evidencias="F001, p.4, P06: «se houver impedimento, o processo não prossegue.»" gaps="" detalhes="Roteamento por modalidade; a frota própria não é submetida a requisitos de terceiros não descritos." papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="3300" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-consultar-risco" label="ATIVIDADE&#10;Solicitar documentos e consultar risco&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P06: «se houver impedimento, o processo não prossegue.»" gaps="gap-atividade-consultar-risco-custo; gap-atividade-consultar-risco-criterio" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Solicitar documentos e consultar risco&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Atender requisitos cadastrais e de segurança&quot;, &quot;where&quot;: &quot;WhatsApp e Angel Lira&quot;, &quot;when&quot;: &quot;Antes do cadastro e programação do terceiro&quot;, &quot;how&quot;: &quot;Receber/solicitar documentos; consultar; tratar pendência com Angel Lira; com impedimento não prosseguir&quot;, &quot;qty&quot;: &quot;Taxa não validada no levantamento&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="3580" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-impedimento-risco" label="DECISÃO&#10;Existe impedimento de risco?" tipo="decisao" estado="extraido" evidencias="F001, p.4, P06: «se houver impedimento, o processo não prossegue.»" gaps="" detalhes="" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="3860" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="fim-operacao-impedida" label="FIM&#10;Operação não prossegue" tipo="fim" estado="extraido" evidencias="F001, p.4, P06: «se houver impedimento, o processo não prossegue.»" gaps="" detalhes="" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#E2E8F0;strokeColor=#334155;strokeWidth=2;">
+            <mxGeometry x="4140" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-cadastrar-a2o" label="ATIVIDADE&#10;Cadastrar no A2O&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P07: «Após aprovação na gerenciadora de risco»" gaps="gap-atividade-cadastrar-a2o-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Cadastrar no A2O&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Habilitar motorista, empresa e veículo&quot;, &quot;where&quot;: &quot;A2O&quot;, &quot;when&quot;: &quot;Após aprovação na gerenciadora de risco&quot;, &quot;how&quot;: &quot;Cadastrar pessoa/empresa e conjunto veicular conforme necessidade&quot;, &quot;qty&quot;: &quot;Esforço interno; custo não mensurado&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="4420" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-programar-terceiro" label="ATIVIDADE&#10;Programar viagem — terceiro&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P08: «Terceiros: Assistente Comercial. Frota própria: Faturista.»" gaps="gap-atividade-programar-terceiro-custo; gap-atividade-programar-terceiro-controle" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Programar viagem&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Organizar veículo, motorista, carga, data e status&quot;, &quot;where&quot;: &quot;Planilhas separadas e A2O&quot;, &quot;when&quot;: &quot;Após definição/cadastro e antes da Ordem de Carregamento&quot;, &quot;how&quot;: &quot;Registrar viagem, atualizar status e manter controle por modalidade&quot;, &quot;qty&quot;: &quot;Esforço interno; risco de duplicidade de controles&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="4700" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-programar-frota" label="ATIVIDADE&#10;Programar viagem — frota própria&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P08: «Terceiros: Assistente Comercial. Frota própria: Faturista.»" gaps="gap-atividade-programar-frota-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Programar viagem&quot;, &quot;who&quot;: &quot;Faturista&quot;, &quot;why&quot;: &quot;Organizar veículo, motorista, carga, data e status&quot;, &quot;where&quot;: &quot;Planilhas separadas e A2O&quot;, &quot;when&quot;: &quot;Após definição/cadastro e antes da Ordem de Carregamento&quot;, &quot;how&quot;: &quot;Registrar viagem, atualizar status e manter controle por modalidade&quot;, &quot;qty&quot;: &quot;Esforço interno; risco de duplicidade de controles&quot;}" papel="">
+          <mxCell parent="faturista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="4980" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-ordem-combustivel" label="DECISÃO&#10;Operação de combustível?" tipo="decisao" estado="extraido" evidencias="F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»" gaps="" detalhes="Classificação da carga; responsável pelo teste não descrito. Raia representa recepção operacional e não alçada." papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="5260" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-enviar-ordem-geral" label="ATIVIDADE&#10;Emitir/enviar OC — geral&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»" gaps="gap-atividade-enviar-ordem-geral-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Emitir/enviar Ordem de Carregamento&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Autorizar e orientar carregamento&quot;, &quot;where&quot;: &quot;WhatsApp e grupo operacional&quot;, &quot;when&quot;: &quot;Depois da programação e antes do carregamento&quot;, &quot;how&quot;: &quot;Conferir ordem, enviar ao motorista e compartilhar no grupo&quot;, &quot;qty&quot;: &quot;Sem custo direto mensurado&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="5540" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-enviar-ordem-combustivel" label="ATIVIDADE&#10;Emitir/enviar OC — combustível&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»" gaps="gap-atividade-enviar-ordem-combustivel-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Emitir/enviar Ordem de Carregamento&quot;, &quot;who&quot;: &quot;Faturista&quot;, &quot;why&quot;: &quot;Autorizar e orientar carregamento&quot;, &quot;where&quot;: &quot;WhatsApp e grupo operacional&quot;, &quot;when&quot;: &quot;Depois da programação e antes do carregamento&quot;, &quot;how&quot;: &quot;Conferir ordem, enviar ao motorista e compartilhar no grupo&quot;, &quot;qty&quot;: &quot;Sem custo direto mensurado&quot;}" papel="">
+          <mxCell parent="faturista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="5820" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-carregar" label="ATIVIDADE&#10;Realizar carregamento" tipo="atividade" estado="extraido" evidencias="F001, p.4, P10: «Motorista e embarcador»" gaps="" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Realizar carregamento&quot;, &quot;who&quot;: &quot;Motorista e Embarcador&quot;, &quot;why&quot;: &quot;Executar coleta da carga&quot;, &quot;where&quot;: &quot;Local de carregamento&quot;, &quot;when&quot;: &quot;Data/horário programados&quot;, &quot;how&quot;: &quot;Apresentar-se, cumprir checklist/procedimentos locais, carregar e receber NF&quot;, &quot;qty&quot;: &quot;Custo incorporado à operação&quot;}" papel="">
+          <mxCell parent="motorista-embarcador" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="6100" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-documentos-combustivel" label="DECISÃO&#10;Emissão para combustível?" tipo="decisao" estado="extraido" evidencias="F001, p.5, P11: «Combustível: Faturista.»" gaps="" detalhes="Roteamento documental por modalidade; não é nova aprovação." papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="6380" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-emitir-documentos-combustivel" label="ATIVIDADE&#10;Emitir CT-e/MDF-e — combustível&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P11: «Combustível: Faturista.»" gaps="gap-atividade-emitir-documentos-combustivel-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Emitir CT-e/MDF-e e liberar motorista&quot;, &quot;who&quot;: &quot;Faturista&quot;, &quot;why&quot;: &quot;Cumprir requisitos fiscais e documentais&quot;, &quot;where&quot;: &quot;A2O e WhatsApp&quot;, &quot;when&quot;: &quot;Após carregamento e recebimento da NF&quot;, &quot;how&quot;: &quot;Obter/importar XML, emitir documentos e encaminhar ao motorista&quot;, &quot;qty&quot;: &quot;Tributos/taxas por operação; não mensurados&quot;}" papel="">
+          <mxCell parent="faturista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="6660" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-emitir-documentos-demais" label="ATIVIDADE&#10;Emitir CT-e/MDF-e — demais&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P11: «Combustível: Faturista.»" gaps="gap-atividade-emitir-documentos-demais-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Emitir CT-e/MDF-e e liberar motorista&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Cumprir requisitos fiscais e documentais&quot;, &quot;where&quot;: &quot;A2O e WhatsApp&quot;, &quot;when&quot;: &quot;Após carregamento e recebimento da NF&quot;, &quot;how&quot;: &quot;Obter/importar XML, emitir documentos e encaminhar ao motorista&quot;, &quot;qty&quot;: &quot;Tributos/taxas por operação; não mensurados&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="6940" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-acompanhamento-modalidade" label="DECISÃO&#10;Modalidade de acompanhamento?&#10;[GAP]" tipo="decisao" estado="extraido" evidencias="F001, p.5, P12: «Da saída até a descarga»" gaps="gap-pendencia-modalidade-acompanhamento-destino" detalhes="Roteamento por modalidade; casos além de terceiros/Sider/tanque/combustível não foram assumidos." papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="7220" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-acompanhar-terceiros-sider" label="ATIVIDADE&#10;Acompanhar viagem — terceiros/Sider&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P12: «Da saída até a descarga»" gaps="gap-atividade-acompanhar-terceiros-sider-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Acompanhar viagem&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Dar suporte, monitorar status e antecipar ocorrências&quot;, &quot;where&quot;: &quot;WhatsApp, rastreadores e controles&quot;, &quot;when&quot;: &quot;Da saída até a descarga&quot;, &quot;how&quot;: &quot;Acompanhar posição/status e contatar motorista quando necessário&quot;, &quot;qty&quot;: &quot;Esforço interno&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="7500" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-acompanhar-tanque" label="ATIVIDADE&#10;Acompanhar viagem — tanque/combustível&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P12: «Da saída até a descarga»" gaps="gap-atividade-acompanhar-tanque-custo" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Acompanhar viagem&quot;, &quot;who&quot;: &quot;Faturista&quot;, &quot;why&quot;: &quot;Dar suporte, monitorar status e antecipar ocorrências&quot;, &quot;where&quot;: &quot;WhatsApp, rastreadores e controles&quot;, &quot;when&quot;: &quot;Da saída até a descarga&quot;, &quot;how&quot;: &quot;Acompanhar posição/status e contatar motorista quando necessário&quot;, &quot;qty&quot;: &quot;Esforço interno&quot;}" papel="">
+          <mxCell parent="faturista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="7780" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="pendencia-modalidade-acompanhamento" label="PENDÊNCIA&#10;Cobertura das demais modalidades a validar&#10;[GAP]" tipo="pendencia" estado="gap" evidencias="F001, p.5, P12: «Da saída até a descarga»" gaps="gap-pendencia-modalidade-acompanhamento-destino" detalhes="Ramo condicional de validação: somente se houver modalidade não coberta pelas categorias descritas. Não afirma existência de outra frota." papel="">
+          <mxCell parent="operacao" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=0;dashed=1;fillColor=#FEE2E2;strokeColor=#991B1B;strokeWidth=2;">
+            <mxGeometry x="8060" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-janela-exigida" label="DECISÃO&#10;Destino exige janela de descarga?" tipo="decisao" estado="extraido" evidencias="F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»" gaps="" detalhes="Atividade de acompanhamento é contínua até a descarga. A seta indica passagem de informação, não que o acompanhamento terminou antes do agendamento." papel="">
+          <mxCell parent="operacao" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="8340" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-agendar-janela" label="ATIVIDADE&#10;Solicitar e confirmar janela de descarga&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»" gaps="gap-atividade-agendar-janela-custo; gap-atividade-agendar-janela-responsavel" detalhes="Somente se o destino exigir. A perda é rara e permite reagendamento sem dificuldade.&#10;5W2H: {&quot;what&quot;: &quot;Agendar e confirmar descarga&quot;, &quot;who&quot;: &quot;Responsável pela operação&quot;, &quot;why&quot;: &quot;Concluir entrega conforme exigência do destino&quot;, &quot;where&quot;: &quot;E-mail, WhatsApp ou canal do cliente; confirmação por WhatsApp&quot;, &quot;when&quot;: &quot;Antes da chegada e no término da descarga&quot;, &quot;how&quot;: &quot;Solicitar/confirmar janela se exigida; reagendar quando perdida; confirmar descarga por WhatsApp; recorte: Somente se o destino exigir. A perda é rara e permite reagendamento sem dificuldade.&quot;, &quot;qty&quot;: &quot;Sem custo específico mensurado&quot;}" papel="">
+          <mxCell parent="operacao" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="8620" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-confirmar-descarga" label="ATIVIDADE&#10;Confirmar descarga por WhatsApp&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»" gaps="gap-atividade-confirmar-descarga-custo" detalhes="Confirmação após a descarga; não há execução física detalhada da descarga no PDF.&#10;5W2H: {&quot;what&quot;: &quot;Agendar e confirmar descarga&quot;, &quot;who&quot;: &quot;Responsável pela operação&quot;, &quot;why&quot;: &quot;Concluir entrega conforme exigência do destino&quot;, &quot;where&quot;: &quot;E-mail, WhatsApp ou canal do cliente; confirmação por WhatsApp&quot;, &quot;when&quot;: &quot;Antes da chegada e no término da descarga&quot;, &quot;how&quot;: &quot;Solicitar/confirmar janela se exigida; reagendar quando perdida; confirmar descarga por WhatsApp; recorte: Confirmação após a descarga; não há execução física detalhada da descarga no PDF.&quot;, &quot;qty&quot;: &quot;Sem custo específico mensurado&quot;}" papel="">
+          <mxCell parent="operacao" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="8900" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-entregar-documentos-retorno" label="ATIVIDADE&#10;Entregar documentos de retorno&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P14: «No retorno do motorista»" gaps="gap-atividade-entregar-documentos-retorno-custo" detalhes="Entrega pelo motorista ao Faturista; recepção integra a conferência seguinte.&#10;5W2H: {&quot;what&quot;: &quot;Receber documentos do retorno&quot;, &quot;who&quot;: &quot;Motorista&quot;, &quot;why&quot;: &quot;Comprovar viagem e iniciar acerto&quot;, &quot;where&quot;: &quot;Documentação física/digital&quot;, &quot;when&quot;: &quot;No retorno do motorista&quot;, &quot;how&quot;: &quot;Entregar CT-e, NF assinada/carimbada, comprovantes de abastecimento, despesas e demais documentos; recorte: Entrega pelo motorista ao Faturista; recepção integra a conferência seguinte.&quot;, &quot;qty&quot;: &quot;Sem custo direto mensurado&quot;}" papel="">
+          <mxCell parent="motorista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="9180" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-conferir-documentos" label="ATIVIDADE&#10;Conferir e organizar documentação&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P15: «Faturista -&gt; Analista Administrativa»" gaps="gap-atividade-conferir-documentos-custo" detalhes="Inclui recebimento de P14 e entrega do conjunto à Analista Administrativa.&#10;5W2H: {&quot;what&quot;: &quot;Conferir e organizar documentação&quot;, &quot;who&quot;: &quot;Faturista&quot;, &quot;why&quot;: &quot;Garantir integridade antes da validação final&quot;, &quot;where&quot;: &quot;Documentos e A2O&quot;, &quot;when&quot;: &quot;Logo após retorno&quot;, &quot;how&quot;: &quot;Conferir emissão de CT-e; imprimir, reunir documentos e entregar para conferência final; recorte: Inclui recebimento de P14 e entrega do conjunto à Analista Administrativa.&quot;, &quot;qty&quot;: &quot;Esforço interno&quot;}" papel="">
+          <mxCell parent="faturista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="9460" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-lancar-cargas" label="ATIVIDADE&#10;Lançar cargas no A2O" tipo="atividade" estado="extraido" evidencias="F001, p.5, P16: «Assistente lança cargas;»" gaps="" detalhes="Somente lançamento; validação e pedido de pagamento ficam com a Analista.&#10;5W2H: {&quot;what&quot;: &quot;Lançar cargas, validar acerto e pedir pagamento&quot;, &quot;who&quot;: &quot;Assistente Comercial&quot;, &quot;why&quot;: &quot;Fechar despesas da viagem e formalizar pagamento&quot;, &quot;where&quot;: &quot;A2O e Bitrix&quot;, &quot;when&quot;: &quot;Após entrega da documentação&quot;, &quot;how&quot;: &quot;Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Somente lançamento; validação e pedido de pagamento ficam com a Analista.&quot;, &quot;qty&quot;: &quot;Valor conforme acerto da viagem&quot;}" papel="">
+          <mxCell parent="assistente" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="9740" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-validar-acerto" label="ATIVIDADE&#10;Conferir documentos e validar acerto&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P16: «Assistente lança cargas;»" gaps="gap-atividade-validar-acerto-sequencia; gap-atividade-validar-acerto-prazo" detalhes="Após disponibilização dos lançamentos; ordem interna representada conforme redação P16, sujeita à validação operacional. Inferência de sequência: confiança media; evidência P16 descreve lançamento seguido de conferência, sem dependência formal.&#10;5W2H: {&quot;what&quot;: &quot;Lançar cargas, validar acerto e pedir pagamento&quot;, &quot;who&quot;: &quot;Analista Administrativa&quot;, &quot;why&quot;: &quot;Fechar despesas da viagem e formalizar pagamento&quot;, &quot;where&quot;: &quot;A2O e Bitrix&quot;, &quot;when&quot;: &quot;Após entrega da documentação&quot;, &quot;how&quot;: &quot;Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Após disponibilização dos lançamentos; ordem interna representada conforme redação P16, sujeita à validação operacional.&quot;, &quot;qty&quot;: &quot;Valor conforme acerto da viagem&quot;}" papel="">
+          <mxCell parent="analista-administrativa" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="10020" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-pedir-pagamento" label="ATIVIDADE&#10;Solicitar pagamento no Bitrix&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.5, P16: «Assistente lança cargas;»" gaps="gap-atividade-pedir-pagamento-metodo" detalhes="Solicitação registrada não equivale a pagamento executado.&#10;5W2H: {&quot;what&quot;: &quot;Lançar cargas, validar acerto e pedir pagamento&quot;, &quot;who&quot;: &quot;Analista Administrativa&quot;, &quot;why&quot;: &quot;Fechar despesas da viagem e formalizar pagamento&quot;, &quot;where&quot;: &quot;A2O e Bitrix&quot;, &quot;when&quot;: &quot;Após entrega da documentação&quot;, &quot;how&quot;: &quot;Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Solicitação registrada não equivale a pagamento executado.&quot;, &quot;qty&quot;: &quot;Valor conforme acerto da viagem&quot;}" papel="">
+          <mxCell parent="analista-administrativa" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="10300" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="fim-solicitacao-registrada" label="FIM&#10;Solicitação de pagamento registrada" tipo="fim" estado="extraido" evidencias="F001, p.5, P16: «Assistente lança cargas;»" gaps="" detalhes="Fronteira do acerto documentado; execução do pagamento ao prestador não detalhada." papel="">
+          <mxCell parent="analista-administrativa" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#E2E8F0;strokeColor=#334155;strokeWidth=2;">
+            <mxGeometry x="10580" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="inicio-ciclo-faturamento" label="INÍCIO&#10;CT-e e ciclo comercial de faturamento" tipo="inicio" estado="extraido" evidencias="F001, p.6, P17: «CT-e gera título;»" gaps="" detalhes="CT-e de P11 gera título. Agrupamento semanal, quinzenal ou conforme condição comercial; sem pressupor espera pelo acerto P16." papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#DCFCE7;strokeColor=#166534;strokeWidth=2;">
+            <mxGeometry x="10860" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-faturar-cliente" label="ATIVIDADE&#10;Faturar o cliente" tipo="atividade" estado="extraido" evidencias="F001, p.6, P17: «CT-e gera título;»" gaps="" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Faturar o cliente&quot;, &quot;who&quot;: &quot;Faturamento&quot;, &quot;why&quot;: &quot;Transformar transporte em valor a receber&quot;, &quot;where&quot;: &quot;A2O, banco e e-mail&quot;, &quot;when&quot;: &quot;Semanal, quinzenal ou conforme condição comercial&quot;, &quot;how&quot;: &quot;CT-e gera título; agrupar CT-es em fatura, definir vencimento e enviar fatura com boleto ou instrução PIX&quot;, &quot;qty&quot;: &quot;Valor total dos CT-es faturados&quot;}" papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="11140" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-verificar-pagamento" label="ATIVIDADE&#10;Identificar pagamento no banco" tipo="atividade" estado="extraido" evidencias="F001, p.6, P18: «realiza baixa manual no A2O.»" gaps="" detalhes="Verificação no vencimento e após, se necessário.&#10;5W2H: {&quot;what&quot;: &quot;Receber, baixar e cobrar atraso&quot;, &quot;who&quot;: &quot;Faturamento&quot;, &quot;why&quot;: &quot;Realizar receita e encerrar financeiro&quot;, &quot;where&quot;: &quot;Banco, A2O e canais de cobrança&quot;, &quot;when&quot;: &quot;No vencimento e após ele, se necessário&quot;, &quot;how&quot;: &quot;Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Verificação no vencimento e após, se necessário.&quot;, &quot;qty&quot;: &quot;Saldo do título em aberto&quot;}" papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="11420" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="decisao-pagamento-identificado" label="DECISÃO&#10;Pagamento identificado?" tipo="decisao" estado="extraido" evidencias="F001, p.6, P18: «realiza baixa manual no A2O.»" gaps="" detalhes="" papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rhombus;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;">
+            <mxGeometry x="11700" y="40" width="180" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-baixar-titulo" label="ATIVIDADE&#10;Realizar baixa manual no A2O" tipo="atividade" estado="extraido" evidencias="F001, p.6, P18: «realiza baixa manual no A2O.»" gaps="" detalhes="Após identificação do crédito bancário.&#10;5W2H: {&quot;what&quot;: &quot;Receber, baixar e cobrar atraso&quot;, &quot;who&quot;: &quot;Faturamento&quot;, &quot;why&quot;: &quot;Realizar receita e encerrar financeiro&quot;, &quot;where&quot;: &quot;Banco, A2O e canais de cobrança&quot;, &quot;when&quot;: &quot;No vencimento e após ele, se necessário&quot;, &quot;how&quot;: &quot;Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Após identificação do crédito bancário.&quot;, &quot;qty&quot;: &quot;Saldo do título em aberto&quot;}" papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="11980" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="fim-financeiro-cliente-encerrado" label="FIM&#10;Recebimento e baixa concluídos" tipo="fim" estado="extraido" evidencias="F001, p.6, P18: «realiza baixa manual no A2O.»" gaps="" detalhes="" papel="">
+          <mxCell parent="faturamento" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#E2E8F0;strokeColor=#334155;strokeWidth=2;">
+            <mxGeometry x="12260" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-cobrar-atraso" label="ATIVIDADE&#10;Cobrar título vencido" tipo="atividade" estado="extraido" evidencias="F001, p.6, P18: «realiza baixa manual no A2O.»" gaps="" detalhes="Cobrar até regularização; não inventar cadência, limite de tentativas ou regra jurídica.&#10;5W2H: {&quot;what&quot;: &quot;Receber, baixar e cobrar atraso&quot;, &quot;who&quot;: &quot;Crédito e Cobrança&quot;, &quot;why&quot;: &quot;Realizar receita e encerrar financeiro&quot;, &quot;where&quot;: &quot;Banco, A2O e canais de cobrança&quot;, &quot;when&quot;: &quot;No vencimento e após ele, se necessário&quot;, &quot;how&quot;: &quot;Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Cobrar até regularização; não inventar cadência, limite de tentativas ou regra jurídica.&quot;, &quot;qty&quot;: &quot;Saldo do título em aberto&quot;}" papel="">
+          <mxCell parent="credito-cobranca" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="12540" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="inicio-rotina-jornada" label="INÍCIO&#10;Rotina diária / fechamento mensal" tipo="inicio" estado="extraido" evidencias="F001, p.6, P19: «Diariamente e no fechamento mensal»" gaps="" detalhes="" papel="">
+          <mxCell parent="jornada" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#DCFCE7;strokeColor=#166534;strokeWidth=2;">
+            <mxGeometry x="12820" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-controlar-jornada" label="ATIVIDADE&#10;Controlar jornada e dar suporte à frota própria&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.6, P19: «Diariamente e no fechamento mensal»" gaps="gap-atividade-controlar-jornada-custo; gap-atividade-controlar-jornada-controle" detalhes="&#10;5W2H: {&quot;what&quot;: &quot;Controlar jornada e dar suporte à frota própria&quot;, &quot;who&quot;: &quot;Analista de Logística/Jornada&quot;, &quot;why&quot;: &quot;Apoiar motoristas, cumprir jornada e alimentar folha&quot;, &quot;where&quot;: &quot;Omnilink/Sigra, Drive, WhatsApp e Bitrix&quot;, &quot;when&quot;: &quot;Diariamente e no fechamento mensal&quot;, &quot;how&quot;: &quot;Monitorar posição, coletar informações e complementar registros; controlar folgas/CNH/licenças; baixar planilha Drive e abrir tarefa no Bitrix para DP&quot;, &quot;qty&quot;: &quot;Esforço interno; retrabalho não mensurado&quot;}" papel="">
+          <mxCell parent="jornada" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="13100" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="fim-ciclo-jornada-documentado" label="FIM&#10;Registros e tarefa para DP disponibilizados" tipo="fim" estado="extraido" evidencias="F001, p.6, P19: «Diariamente e no fechamento mensal»" gaps="" detalhes="Fim deste recorte de apoio, não fim da relação de trabalho ou da rotina recorrente." papel="">
+          <mxCell parent="jornada" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#E2E8F0;strokeColor=#334155;strokeWidth=2;">
+            <mxGeometry x="13380" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="inicio-problema-manutencao" label="INÍCIO&#10;Problema relatado pelo motorista" tipo="inicio" estado="extraido" evidencias="F001, p.6, P20: «Motorista comunica problema e envia fotos.»" gaps="" detalhes="Somente gatilho confirmado; não gerar fluxo preventivo a partir de etapas em validação." papel="">
+          <mxCell parent="motorista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=50;fillColor=#DCFCE7;strokeColor=#166534;strokeWidth=2;">
+            <mxGeometry x="13660" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="atividade-comunicar-problema" label="ATIVIDADE&#10;Comunicar problema e enviar fotos&#10;[GAP]" tipo="atividade" estado="extraido" evidencias="F001, p.6, P20: «Motorista comunica problema e envia fotos.»" gaps="gap-atividade-comunicar-problema-custo" detalhes="Única ação operacional confirmada de P20; apoio administrativo citado, mas sequência não validada.&#10;5W2H: {&quot;what&quot;: &quot;Tratar manutenção e documentação de manutenção&quot;, &quot;who&quot;: &quot;Motorista&quot;, &quot;why&quot;: &quot;Manter veículo seguro e disponível&quot;, &quot;where&quot;: &quot;WhatsApp confirmado; Bitrix e sistemas em validação&quot;, &quot;when&quot;: &quot;Confirmado: motorista informa problema; rotinas preventivas ainda não validadas (p.2 e p.11)&quot;, &quot;how&quot;: &quot;Confirmado: motorista comunica problema e envia fotos; preventiva/corretiva, OS, compras e liberação não validados; recorte: Única ação operacional confirmada de P20; apoio administrativo citado, mas sequência não validada.&quot;, &quot;qty&quot;: &quot;Variável; não mensurado&quot;}" papel="">
+          <mxCell parent="motorista" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=1;arcSize=15;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;">
+            <mxGeometry x="13940" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="pendencia-detalhar-manutencao" label="PENDÊNCIA&#10;Fluxo de manutenção ainda não validado&#10;[GAP]" tipo="pendencia" estado="gap" evidencias="F001, p.6, P20: «Motorista comunica problema e envia fotos.»" gaps="gap-pendencia-detalhar-manutencao-criterio; gap-pendencia-detalhar-manutencao-metodo; gap-pendencia-detalhar-manutencao-destino" detalhes="F001 p.2/p.11 prevalecem sobre menção genérica a rotinas preventivas na linha P20; não modelar OS/compras/aprovação/pagamento/liberação como fatos." papel="">
+          <mxCell parent="manutencao" vertex="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;rounded=0;dashed=1;fillColor=#FEE2E2;strokeColor=#991B1B;strokeWidth=2;">
+            <mxGeometry x="14220" y="60" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="fluxo-001" parent="1" edge="1" source="inicio-demanda" target="atividade-captar-cargas" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="230" />
+              <mxPoint x="490" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-002" parent="1" edge="1" source="atividade-captar-cargas" target="decisao-operacao-tanque" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="230" />
+              <mxPoint x="770" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-003" parent="1" edge="1" source="decisao-operacao-tanque" target="atividade-avaliar-viabilidade-geral" value="Não" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="230" />
+              <mxPoint x="1050" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-004" parent="1" edge="1" source="decisao-operacao-tanque" target="atividade-avaliar-viabilidade-tanque" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="230" />
+              <mxPoint x="1030" y="3020" />
+              <mxPoint x="1590" y="3020" />
+              <mxPoint x="1590" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-005" parent="1" edge="1" source="atividade-avaliar-viabilidade-geral" target="decisao-margem-minima" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="230" />
+              <mxPoint x="1310" y="3044" />
+              <mxPoint x="1870" y="3044" />
+              <mxPoint x="1870" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-006" parent="1" edge="1" source="atividade-avaliar-viabilidade-tanque" target="decisao-margem-minima" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1610" y="470" />
+              <mxPoint x="1610" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-007" parent="1" edge="1" source="decisao-margem-minima" target="fim-frete-nao-fechado" value="Não: abaixo de 40%" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1890" y="230" />
+              <mxPoint x="1890" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-008" parent="1" edge="1" source="decisao-margem-minima" target="atividade-definir-frota" value="Sim: ≥40%" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1870" y="230" />
+              <mxPoint x="1870" y="3068" />
+              <mxPoint x="2430" y="3068" />
+              <mxPoint x="2430" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-009" parent="1" edge="1" source="atividade-definir-frota" target="decisao-terceirizar" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2450" y="230" />
+              <mxPoint x="2450" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-010" parent="1" edge="1" source="decisao-terceirizar" target="atividade-buscar-terceiro" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2730" y="230" />
+              <mxPoint x="2730" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-011" parent="1" edge="1" source="decisao-terceirizar" target="atividade-repassar-operacao" value="Não: frota própria definida" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2710" y="230" />
+              <mxPoint x="2710" y="3092" />
+              <mxPoint x="3270" y="3092" />
+              <mxPoint x="3270" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-012" parent="1" edge="1" source="atividade-buscar-terceiro" target="atividade-repassar-operacao" value="Carga e veículo definidos" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3010" y="230" />
+              <mxPoint x="3010" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-013" parent="1" edge="1" source="atividade-repassar-operacao" target="decisao-programar-terceiro" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3290" y="230" />
+              <mxPoint x="3290" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-014" parent="1" edge="1" source="decisao-programar-terceiro" target="atividade-consultar-risco" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3570" y="710" />
+              <mxPoint x="3570" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-019" parent="1" edge="1" source="decisao-programar-terceiro" target="atividade-programar-frota" value="Não" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3550" y="710" />
+              <mxPoint x="3550" y="3116" />
+              <mxPoint x="5230" y="3116" />
+              <mxPoint x="5230" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-015" parent="1" edge="1" source="atividade-consultar-risco" target="decisao-impedimento-risco" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3850" y="710" />
+              <mxPoint x="3850" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-016" parent="1" edge="1" source="decisao-impedimento-risco" target="fim-operacao-impedida" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4130" y="710" />
+              <mxPoint x="4130" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-017" parent="1" edge="1" source="decisao-impedimento-risco" target="atividade-cadastrar-a2o" value="Não / aprovação" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4110" y="710" />
+              <mxPoint x="4110" y="3140" />
+              <mxPoint x="4670" y="3140" />
+              <mxPoint x="4670" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-018" parent="1" edge="1" source="atividade-cadastrar-a2o" target="atividade-programar-terceiro" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4690" y="710" />
+              <mxPoint x="4690" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-020" parent="1" edge="1" source="atividade-programar-terceiro" target="decisao-ordem-combustivel" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4950" y="710" />
+              <mxPoint x="4950" y="3164" />
+              <mxPoint x="5510" y="3164" />
+              <mxPoint x="5510" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-021" parent="1" edge="1" source="atividade-programar-frota" target="decisao-ordem-combustivel" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5250" y="950" />
+              <mxPoint x="5250" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-022" parent="1" edge="1" source="decisao-ordem-combustivel" target="atividade-enviar-ordem-geral" value="Não" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5530" y="710" />
+              <mxPoint x="5530" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-023" parent="1" edge="1" source="decisao-ordem-combustivel" target="atividade-enviar-ordem-combustivel" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5510" y="710" />
+              <mxPoint x="5510" y="3188" />
+              <mxPoint x="6070" y="3188" />
+              <mxPoint x="6070" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-024" parent="1" edge="1" source="atividade-enviar-ordem-geral" target="atividade-carregar" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5790" y="710" />
+              <mxPoint x="5790" y="3212" />
+              <mxPoint x="6350" y="3212" />
+              <mxPoint x="6350" y="1190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-025" parent="1" edge="1" source="atividade-enviar-ordem-combustivel" target="atividade-carregar" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="6090" y="950" />
+              <mxPoint x="6090" y="1190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-026" parent="1" edge="1" source="atividade-carregar" target="decisao-documentos-combustivel" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="6370" y="1190" />
+              <mxPoint x="6370" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-027" parent="1" edge="1" source="decisao-documentos-combustivel" target="atividade-emitir-documentos-combustivel" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="6650" y="710" />
+              <mxPoint x="6650" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-028" parent="1" edge="1" source="decisao-documentos-combustivel" target="atividade-emitir-documentos-demais" value="Não: terceiros e demais frota" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="6630" y="710" />
+              <mxPoint x="6630" y="3236" />
+              <mxPoint x="7190" y="3236" />
+              <mxPoint x="7190" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-030" parent="1" edge="1" source="atividade-emitir-documentos-combustivel" target="decisao-acompanhamento-modalidade" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="6910" y="950" />
+              <mxPoint x="6910" y="3260" />
+              <mxPoint x="7470" y="3260" />
+              <mxPoint x="7470" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-029" parent="1" edge="1" source="atividade-emitir-documentos-demais" target="decisao-acompanhamento-modalidade" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7210" y="710" />
+              <mxPoint x="7210" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-031" parent="1" edge="1" source="decisao-acompanhamento-modalidade" target="atividade-acompanhar-terceiros-sider" value="Terceiros / Sider" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7490" y="710" />
+              <mxPoint x="7490" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-032" parent="1" edge="1" source="decisao-acompanhamento-modalidade" target="atividade-acompanhar-tanque" value="Tanque / combustível" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7470" y="710" />
+              <mxPoint x="7470" y="3284" />
+              <mxPoint x="8030" y="3284" />
+              <mxPoint x="8030" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-055" parent="1" edge="1" source="decisao-acompanhamento-modalidade" target="pendencia-modalidade-acompanhamento" value="Outra modalidade, se existir [GAP]" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7470" y="710" />
+              <mxPoint x="7470" y="3308" />
+              <mxPoint x="8310" y="3308" />
+              <mxPoint x="8310" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-033" parent="1" edge="1" source="atividade-acompanhar-terceiros-sider" target="decisao-janela-exigida" value="Antes da chegada" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7750" y="710" />
+              <mxPoint x="7750" y="3332" />
+              <mxPoint x="8590" y="3332" />
+              <mxPoint x="8590" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-034" parent="1" edge="1" source="atividade-acompanhar-tanque" target="decisao-janela-exigida" value="Antes da chegada" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="8030" y="950" />
+              <mxPoint x="8030" y="3356" />
+              <mxPoint x="8590" y="3356" />
+              <mxPoint x="8590" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-035" parent="1" edge="1" source="decisao-janela-exigida" target="atividade-agendar-janela" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="8610" y="1430" />
+              <mxPoint x="8610" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-036" parent="1" edge="1" source="decisao-janela-exigida" target="atividade-confirmar-descarga" value="Não: após descarga" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="8590" y="1430" />
+              <mxPoint x="8590" y="3380" />
+              <mxPoint x="9150" y="3380" />
+              <mxPoint x="9150" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-037" parent="1" edge="1" source="atividade-agendar-janela" target="atividade-confirmar-descarga" value="Após descarga; reagendar se necessário" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="8890" y="1430" />
+              <mxPoint x="8890" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-038" parent="1" edge="1" source="atividade-confirmar-descarga" target="atividade-entregar-documentos-retorno" value="No retorno do motorista" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="9170" y="1430" />
+              <mxPoint x="9170" y="1670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-039" parent="1" edge="1" source="atividade-entregar-documentos-retorno" target="atividade-conferir-documentos" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="9450" y="1670" />
+              <mxPoint x="9450" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-040" parent="1" edge="1" source="atividade-conferir-documentos" target="atividade-lancar-cargas" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="9730" y="950" />
+              <mxPoint x="9730" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-041" parent="1" edge="1" source="atividade-lancar-cargas" target="atividade-validar-acerto" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10010" y="710" />
+              <mxPoint x="10010" y="1910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-042" parent="1" edge="1" source="atividade-validar-acerto" target="atividade-pedir-pagamento" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10290" y="1910" />
+              <mxPoint x="10290" y="1910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-043" parent="1" edge="1" source="atividade-pedir-pagamento" target="fim-solicitacao-registrada" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10570" y="1910" />
+              <mxPoint x="10570" y="1910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-044" parent="1" edge="1" source="inicio-ciclo-faturamento" target="atividade-faturar-cliente" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="11130" y="2150" />
+              <mxPoint x="11130" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-045" parent="1" edge="1" source="atividade-faturar-cliente" target="atividade-verificar-pagamento" value="No vencimento / conforme condição" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="11410" y="2150" />
+              <mxPoint x="11410" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-046" parent="1" edge="1" source="atividade-verificar-pagamento" target="decisao-pagamento-identificado" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="11690" y="2150" />
+              <mxPoint x="11690" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-047" parent="1" edge="1" source="decisao-pagamento-identificado" target="atividade-baixar-titulo" value="Sim" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="11970" y="2150" />
+              <mxPoint x="11970" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-049" parent="1" edge="1" source="decisao-pagamento-identificado" target="atividade-cobrar-atraso" value="Não: título vencido" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="11950" y="2150" />
+              <mxPoint x="11950" y="3404" />
+              <mxPoint x="12790" y="3404" />
+              <mxPoint x="12790" y="2390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-048" parent="1" edge="1" source="atividade-baixar-titulo" target="fim-financeiro-cliente-encerrado" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="12250" y="2150" />
+              <mxPoint x="12250" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-050" parent="1" edge="1" source="atividade-cobrar-atraso" target="atividade-verificar-pagamento" value="Até regularização" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="12790" y="2390" />
+              <mxPoint x="12790" y="3428" />
+              <mxPoint x="11670" y="3428" />
+              <mxPoint x="11670" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-051" parent="1" edge="1" source="inicio-rotina-jornada" target="atividade-controlar-jornada" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="13090" y="2630" />
+              <mxPoint x="13090" y="2630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-052" parent="1" edge="1" source="atividade-controlar-jornada" target="fim-ciclo-jornada-documentado" value="No fechamento mensal" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="13370" y="2630" />
+              <mxPoint x="13370" y="2630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-053" parent="1" edge="1" source="inicio-problema-manutencao" target="atividade-comunicar-problema" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="13930" y="1670" />
+              <mxPoint x="13930" y="1670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fluxo-054" parent="1" edge="1" source="atividade-comunicar-problema" target="pendencia-detalhar-manutencao" value="" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;strokeColor=#475569;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="14210" y="1670" />
+              <mxPoint x="14210" y="2870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" parent="1" vertex="1" value="LEGENDA: INÍCIO · ATIVIDADE · DECISÃO · PARALELO · FIM · PENDÊNCIA&#10;[GAP] informação ausente · [INFERIDO] validar interpretação · [PROPOSTA] TO-BE&#10;Pendência não representa conclusão normal do processo." style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=12;fontColor=#0F172A;align=center;verticalAlign=middle;spacing=6;text;strokeColor=none;fillColor=none;align=left;">
+          <mxGeometry x="40" y="3482" width="14500" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
