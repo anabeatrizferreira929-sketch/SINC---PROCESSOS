@@ -1,0 +1,1341 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_Transportadora" targetNamespace="https://sinc-processos.example/modelos/transportadora" exporter="Analisador de processos" exporterVersion="1.0">
+  <bpmn:process id="Process_Transportadora" name="Transportadora — operação, cliente e apoios — AS-IS documental" isExecutable="false">
+    <bpmn:documentation><![CDATA[Fonte: Mapeamento_AS_IS_Transportadora_5W2H.pdf, versão 1.0, 19/10/2026. Modelo documental não executável. Preserva 30 atividades, 10 decisões, 12 raias e 35 GAPs da análise. Os quatro inícios representam recortes de operação, faturamento, jornada e manutenção; não impõem sincronização nem espera do faturamento pelo acerto. Pontos de pendência não são conclusão operacional: uma tarefa PENDÊNCIA e um fim de recorte documental representam a fronteira do conhecimento. Rotas de modalidade não criam novas alçadas. Relatório associado: transportadora-relatorio.md.]]></bpmn:documentation>
+    <bpmn:laneSet id="LaneSet_Transportadora">
+      <bpmn:lane id="raia-supervisor" name="Supervisor Comercial">
+        <bpmn:flowNodeRef>inicio-demanda</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-captar-cargas</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-operacao-tanque</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-avaliar-viabilidade-geral</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-margem-minima</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-frete-nao-fechado</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-definir-frota</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-terceirizar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-buscar-terceiro</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-repassar-operacao</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-faturista-gerente" name="Faturista e Gerente (tanque)">
+        <bpmn:flowNodeRef>atividade-avaliar-viabilidade-tanque</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-assistente" name="Assistente Comercial">
+        <bpmn:flowNodeRef>decisao-programar-terceiro</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-consultar-risco</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-impedimento-risco</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-operacao-impedida</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-cadastrar-a2o</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-programar-terceiro</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-ordem-combustivel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-enviar-ordem-geral</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-documentos-combustivel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-emitir-documentos-demais</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-acompanhamento-modalidade</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-acompanhar-terceiros-sider</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-lancar-cargas</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-faturista" name="Faturista">
+        <bpmn:flowNodeRef>atividade-programar-frota</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-enviar-ordem-combustivel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-emitir-documentos-combustivel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-acompanhar-tanque</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-conferir-documentos</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-motorista-embarcador" name="Motorista e Embarcador">
+        <bpmn:flowNodeRef>atividade-carregar</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-operacao" name="Responsável pela operação">
+        <bpmn:flowNodeRef>pendencia-modalidade-acompanhamento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-janela-exigida</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-agendar-janela</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-confirmar-descarga</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-recorte-pendencia-modalidade-acompanhamento</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-motorista" name="Motorista">
+        <bpmn:flowNodeRef>atividade-entregar-documentos-retorno</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>inicio-problema-manutencao</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-comunicar-problema</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-analista-administrativa" name="Analista Administrativa">
+        <bpmn:flowNodeRef>atividade-validar-acerto</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-pedir-pagamento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-solicitacao-registrada</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-faturamento" name="Faturamento">
+        <bpmn:flowNodeRef>inicio-ciclo-faturamento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-faturar-cliente</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-verificar-pagamento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>decisao-pagamento-identificado</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-baixar-titulo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-financeiro-cliente-encerrado</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-credito-cobranca" name="Crédito e Cobrança">
+        <bpmn:flowNodeRef>atividade-cobrar-atraso</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-jornada" name="Analista de Logística/Jornada">
+        <bpmn:flowNodeRef>inicio-rotina-jornada</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>atividade-controlar-jornada</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-ciclo-jornada-documentado</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="raia-manutencao" name="Manutenção">
+        <bpmn:flowNodeRef>pendencia-detalhar-manutencao</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim-recorte-pendencia-detalhar-manutencao</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="inicio-demanda" name="Oportunidade ou programação de carga">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P01: «Gerar demanda e manter os veículos em operação»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:outgoing>fluxo-001</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="atividade-captar-cargas" name="Receber e captar cargas">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P01: «Gerar demanda e manter os veículos em operação»
+GAPs: gap-atividade-captar-cargas-custo; gap-atividade-captar-cargas-controle
+Recepção/captação pelo Supervisor; origens: cliente, Diretoria e Compras, conforme P01.
+5W2H: {"what": "Receber e captar cargas", "who": "Supervisor Comercial", "why": "Gerar demanda e manter veículos em operação", "where": "WhatsApp, contatos, visitas e grupos", "when": "Conforme oportunidades e programações recorrentes", "how": "Rede de contatos e visitas; couro: cliente define volume; piso: Diretoria envia carga de retorno; combustível dos postos: Compras envia programação no grupo; recorte: Recepção/captação pelo Supervisor; origens: cliente, Diretoria e Compras, conforme P01.", "qty": "Não mensurado; valor depende do frete"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-001</bpmn:incoming>
+      <bpmn:outgoing>fluxo-002</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-operacao-tanque" name="Operação de tanque?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P02: «Margem mínima: 40%;»
+GAPs: Nenhum associado
+Roteamento visual da responsabilidade já definida por modalidade; não representa nova aprovação.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-002</bpmn:incoming>
+      <bpmn:outgoing>fluxo-003</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-004</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-avaliar-viabilidade-geral" name="Avaliar viabilidade e negociar — geral">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P02: «Margem mínima: 40%;»
+GAPs: Nenhum associado
+
+5W2H: {"what": "Avaliar viabilidade e negociar", "who": "Supervisor Comercial", "why": "Evitar operações sem retorno financeiro", "where": "Ferramentas de rota, referências ANTT e controles de cálculo", "when": "Antes da confirmação do frete", "how": "Calcular distância, pedágio, combustível e despesas; negociar; fechar somente com resultado ≥40%", "qty": "Margem mínima: 40%; custos variáveis"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-003</bpmn:incoming>
+      <bpmn:outgoing>fluxo-005</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-avaliar-viabilidade-tanque" name="Avaliar viabilidade e negociar — tanque">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P02: «Margem mínima: 40%;»
+GAPs: Nenhum associado
+Responsabilidade conjunta Faturista + Gerente, conforme P02. Não separar uma decisão conjunta artificialmente.
+5W2H: {"what": "Avaliar viabilidade e negociar", "who": "Faturista e Gerente (tanque)", "why": "Evitar operações sem retorno financeiro", "where": "Ferramentas de rota, referências ANTT e controles de cálculo", "when": "Antes da confirmação do frete", "how": "Calcular distância, pedágio, combustível e despesas; negociar; fechar somente com resultado ≥40%; recorte: Responsabilidade conjunta Faturista + Gerente, conforme P02. Não separar uma decisão conjunta artificialmente.", "qty": "Margem mínima: 40%; custos variáveis"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-004</bpmn:incoming>
+      <bpmn:outgoing>fluxo-006</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-margem-minima" name="Resultado igual ou superior a 40%?" gatewayDirection="Mixed">
+      <bpmn:documentation><![CDATA[Estado: inferido
+Evidência: F001, p.3, P02: «Margem mínima: 40%;»
+GAPs: gap-decisao-margem-minima-responsavel
+Critério extraído. A raia do Supervisor para o ponto de convergência é inferida; para tanque a análise permanece com Faturista + Gerente. Não atribuir alçada adicional.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-005</bpmn:incoming>
+      <bpmn:incoming>fluxo-006</bpmn:incoming>
+      <bpmn:outgoing>fluxo-007</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-008</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="fim-frete-nao-fechado" name="Frete não fechado">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P02: «Margem mínima: 40%;»
+GAPs: Nenhum associado
+Abaixo de 40% o frete não é fechado (p.2). Não inventado retorno para renegociação.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-007</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="atividade-definir-frota" name="Definir frota própria ou terceiro">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P03: «Consulta disponibilidade da frota própria.»
+GAPs: gap-atividade-definir-frota-custo
+
+5W2H: {"what": "Definir frota própria ou terceiro", "who": "Supervisor Comercial", "why": "Alocar recurso adequado à carga", "where": "Planilha da frota e canais comerciais", "when": "Após oportunidade e antes do repasse operacional", "how": "Consultar disponibilidade; buscar terceiro se frota não atender ou se a estratégia exigir", "qty": "Não mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-008</bpmn:incoming>
+      <bpmn:outgoing>fluxo-009</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-terceirizar" name="Operação será terceirizada?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P03: «Consulta disponibilidade da frota própria.»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-009</bpmn:incoming>
+      <bpmn:outgoing>fluxo-010</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-011</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-buscar-terceiro" name="Buscar e negociar terceiro">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P04: «Frete variável; plano Fretebras sujeito a limite»
+GAPs: gap-atividade-buscar-terceiro-controle
+
+5W2H: {"what": "Buscar e negociar terceiro", "who": "Supervisor Comercial", "why": "Atender demandas sem veículo próprio disponível", "where": "Fretebras, rede de contatos e visitas", "when": "Quando a operação será terceirizada", "how": "Localizar prestador, negociar carga/veículo e concluir definições antes do repasse", "qty": "Frete variável; plano Fretebras sujeito a limite"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-010</bpmn:incoming>
+      <bpmn:outgoing>fluxo-012</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-repassar-operacao" name="Repassar operação definida">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.3, P05: «Somente após carga e veículo estarem definidos»
+GAPs: gap-atividade-repassar-operacao-custo; gap-atividade-repassar-operacao-metodo; gap-atividade-repassar-operacao-controle
+
+5W2H: {"what": "Repassar operação definida", "who": "Supervisor Comercial", "why": "Iniciar documentação/programação sem transferir busca incompleta", "where": "Grupo de WhatsApp", "when": "Somente após carga e veículo definidos", "how": "Encaminhar contato e informações da carga ou veículo", "qty": "Sem custo direto mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-011</bpmn:incoming>
+      <bpmn:incoming>fluxo-012</bpmn:incoming>
+      <bpmn:outgoing>fluxo-013</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-programar-terceiro" name="Operação de terceiro?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P06: «se houver impedimento, o processo não prossegue.»
+GAPs: Nenhum associado
+Roteamento por modalidade; a frota própria não é submetida a requisitos de terceiros não descritos.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-013</bpmn:incoming>
+      <bpmn:outgoing>fluxo-014</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-019</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-consultar-risco" name="Solicitar documentos e consultar risco">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P06: «se houver impedimento, o processo não prossegue.»
+GAPs: gap-atividade-consultar-risco-custo; gap-atividade-consultar-risco-criterio
+
+5W2H: {"what": "Solicitar documentos e consultar risco", "who": "Assistente Comercial", "why": "Atender requisitos cadastrais e de segurança", "where": "WhatsApp e Angel Lira", "when": "Antes do cadastro e programação do terceiro", "how": "Receber/solicitar documentos; consultar; tratar pendência com Angel Lira; com impedimento não prosseguir", "qty": "Taxa não validada no levantamento"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-014</bpmn:incoming>
+      <bpmn:outgoing>fluxo-015</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-impedimento-risco" name="Existe impedimento de risco?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P06: «se houver impedimento, o processo não prossegue.»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-015</bpmn:incoming>
+      <bpmn:outgoing>fluxo-016</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-017</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="fim-operacao-impedida" name="Operação não prossegue">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P06: «se houver impedimento, o processo não prossegue.»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-016</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="atividade-cadastrar-a2o" name="Cadastrar no A2O">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P07: «Após aprovação na gerenciadora de risco»
+GAPs: gap-atividade-cadastrar-a2o-custo
+
+5W2H: {"what": "Cadastrar no A2O", "who": "Assistente Comercial", "why": "Habilitar motorista, empresa e veículo", "where": "A2O", "when": "Após aprovação na gerenciadora de risco", "how": "Cadastrar pessoa/empresa e conjunto veicular conforme necessidade", "qty": "Esforço interno; custo não mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-017</bpmn:incoming>
+      <bpmn:outgoing>fluxo-018</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-programar-terceiro" name="Programar viagem — terceiro">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P08: «Terceiros: Assistente Comercial. Frota própria: Faturista.»
+GAPs: gap-atividade-programar-terceiro-custo; gap-atividade-programar-terceiro-controle
+
+5W2H: {"what": "Programar viagem", "who": "Assistente Comercial", "why": "Organizar veículo, motorista, carga, data e status", "where": "Planilhas separadas e A2O", "when": "Após definição/cadastro e antes da Ordem de Carregamento", "how": "Registrar viagem, atualizar status e manter controle por modalidade", "qty": "Esforço interno; risco de duplicidade de controles"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-018</bpmn:incoming>
+      <bpmn:outgoing>fluxo-020</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-programar-frota" name="Programar viagem — frota própria">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P08: «Terceiros: Assistente Comercial. Frota própria: Faturista.»
+GAPs: gap-atividade-programar-frota-custo
+
+5W2H: {"what": "Programar viagem", "who": "Faturista", "why": "Organizar veículo, motorista, carga, data e status", "where": "Planilhas separadas e A2O", "when": "Após definição/cadastro e antes da Ordem de Carregamento", "how": "Registrar viagem, atualizar status e manter controle por modalidade", "qty": "Esforço interno; risco de duplicidade de controles"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-019</bpmn:incoming>
+      <bpmn:outgoing>fluxo-021</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-ordem-combustivel" name="Operação de combustível?" gatewayDirection="Mixed">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»
+GAPs: Nenhum associado
+Classificação da carga; responsável pelo teste não descrito. Raia representa recepção operacional e não alçada.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-020</bpmn:incoming>
+      <bpmn:incoming>fluxo-021</bpmn:incoming>
+      <bpmn:outgoing>fluxo-022</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-023</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-enviar-ordem-geral" name="Emitir/enviar OC — geral">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»
+GAPs: gap-atividade-enviar-ordem-geral-custo
+
+5W2H: {"what": "Emitir/enviar Ordem de Carregamento", "who": "Assistente Comercial", "why": "Autorizar e orientar carregamento", "where": "WhatsApp e grupo operacional", "when": "Depois da programação e antes do carregamento", "how": "Conferir ordem, enviar ao motorista e compartilhar no grupo", "qty": "Sem custo direto mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-022</bpmn:incoming>
+      <bpmn:outgoing>fluxo-024</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-enviar-ordem-combustivel" name="Emitir/enviar OC — combustível">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P09: «Geral: Assistente Comercial. Combustível: Faturista.»
+GAPs: gap-atividade-enviar-ordem-combustivel-custo
+
+5W2H: {"what": "Emitir/enviar Ordem de Carregamento", "who": "Faturista", "why": "Autorizar e orientar carregamento", "where": "WhatsApp e grupo operacional", "when": "Depois da programação e antes do carregamento", "how": "Conferir ordem, enviar ao motorista e compartilhar no grupo", "qty": "Sem custo direto mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-023</bpmn:incoming>
+      <bpmn:outgoing>fluxo-025</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-carregar" name="Realizar carregamento">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.4, P10: «Motorista e embarcador»
+GAPs: Nenhum associado
+
+5W2H: {"what": "Realizar carregamento", "who": "Motorista e Embarcador", "why": "Executar coleta da carga", "where": "Local de carregamento", "when": "Data/horário programados", "how": "Apresentar-se, cumprir checklist/procedimentos locais, carregar e receber NF", "qty": "Custo incorporado à operação"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-024</bpmn:incoming>
+      <bpmn:incoming>fluxo-025</bpmn:incoming>
+      <bpmn:outgoing>fluxo-026</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-documentos-combustivel" name="Emissão para combustível?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P11: «Combustível: Faturista.»
+GAPs: Nenhum associado
+Roteamento documental por modalidade; não é nova aprovação.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-026</bpmn:incoming>
+      <bpmn:outgoing>fluxo-027</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-028</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-emitir-documentos-combustivel" name="Emitir CT-e/MDF-e — combustível">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P11: «Combustível: Faturista.»
+GAPs: gap-atividade-emitir-documentos-combustivel-custo
+
+5W2H: {"what": "Emitir CT-e/MDF-e e liberar motorista", "who": "Faturista", "why": "Cumprir requisitos fiscais e documentais", "where": "A2O e WhatsApp", "when": "Após carregamento e recebimento da NF", "how": "Obter/importar XML, emitir documentos e encaminhar ao motorista", "qty": "Tributos/taxas por operação; não mensurados"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-027</bpmn:incoming>
+      <bpmn:outgoing>fluxo-030</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-emitir-documentos-demais" name="Emitir CT-e/MDF-e — demais">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P11: «Combustível: Faturista.»
+GAPs: gap-atividade-emitir-documentos-demais-custo
+
+5W2H: {"what": "Emitir CT-e/MDF-e e liberar motorista", "who": "Assistente Comercial", "why": "Cumprir requisitos fiscais e documentais", "where": "A2O e WhatsApp", "when": "Após carregamento e recebimento da NF", "how": "Obter/importar XML, emitir documentos e encaminhar ao motorista", "qty": "Tributos/taxas por operação; não mensurados"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-028</bpmn:incoming>
+      <bpmn:outgoing>fluxo-029</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-acompanhamento-modalidade" name="Modalidade de acompanhamento?" gatewayDirection="Mixed">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P12: «Da saída até a descarga»
+GAPs: gap-pendencia-modalidade-acompanhamento-destino
+Roteamento por modalidade; casos além de terceiros/Sider/tanque/combustível não foram assumidos.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-030</bpmn:incoming>
+      <bpmn:incoming>fluxo-029</bpmn:incoming>
+      <bpmn:outgoing>fluxo-031</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-032</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-055</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-acompanhar-terceiros-sider" name="Acompanhar viagem — terceiros/Sider">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P12: «Da saída até a descarga»
+GAPs: gap-atividade-acompanhar-terceiros-sider-custo
+
+5W2H: {"what": "Acompanhar viagem", "who": "Assistente Comercial", "why": "Dar suporte, monitorar status e antecipar ocorrências", "where": "WhatsApp, rastreadores e controles", "when": "Da saída até a descarga", "how": "Acompanhar posição/status e contatar motorista quando necessário", "qty": "Esforço interno"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-031</bpmn:incoming>
+      <bpmn:outgoing>fluxo-033</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-acompanhar-tanque" name="Acompanhar viagem — tanque/combustível">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P12: «Da saída até a descarga»
+GAPs: gap-atividade-acompanhar-tanque-custo
+
+5W2H: {"what": "Acompanhar viagem", "who": "Faturista", "why": "Dar suporte, monitorar status e antecipar ocorrências", "where": "WhatsApp, rastreadores e controles", "when": "Da saída até a descarga", "how": "Acompanhar posição/status e contatar motorista quando necessário", "qty": "Esforço interno"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-032</bpmn:incoming>
+      <bpmn:outgoing>fluxo-034</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="pendencia-modalidade-acompanhamento" name="[PENDÊNCIA] Cobertura das demais modalidades a validar">
+      <bpmn:documentation><![CDATA[Estado: gap
+Evidência: F001, p.5, P12: «Da saída até a descarga»
+GAPs: gap-pendencia-modalidade-acompanhamento-destino
+Ramo condicional de validação: somente se houver modalidade não coberta pelas categorias descritas. Não afirma existência de outra frota.
+Tarefa documental de pendência: não representa execução comprovada.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-055</bpmn:incoming>
+      <bpmn:outgoing>fluxo-recorte-pendencia-modalidade-acompanhamento</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-janela-exigida" name="Destino exige janela de descarga?" gatewayDirection="Mixed">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»
+GAPs: Nenhum associado
+Atividade de acompanhamento é contínua até a descarga. A seta indica passagem de informação, não que o acompanhamento terminou antes do agendamento.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-033</bpmn:incoming>
+      <bpmn:incoming>fluxo-034</bpmn:incoming>
+      <bpmn:outgoing>fluxo-035</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-036</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-agendar-janela" name="Solicitar e confirmar janela de descarga">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»
+GAPs: gap-atividade-agendar-janela-custo; gap-atividade-agendar-janela-responsavel
+Somente se o destino exigir. A perda é rara e permite reagendamento sem dificuldade.
+5W2H: {"what": "Agendar e confirmar descarga", "who": "Responsável pela operação", "why": "Concluir entrega conforme exigência do destino", "where": "E-mail, WhatsApp ou canal do cliente; confirmação por WhatsApp", "when": "Antes da chegada e no término da descarga", "how": "Solicitar/confirmar janela se exigida; reagendar quando perdida; confirmar descarga por WhatsApp; recorte: Somente se o destino exigir. A perda é rara e permite reagendamento sem dificuldade.", "qty": "Sem custo específico mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-035</bpmn:incoming>
+      <bpmn:outgoing>fluxo-037</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-confirmar-descarga" name="Confirmar descarga por WhatsApp">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P13: «A perda é rara; quando ocorre, reagenda.»
+GAPs: gap-atividade-confirmar-descarga-custo
+Confirmação após a descarga; não há execução física detalhada da descarga no PDF.
+5W2H: {"what": "Agendar e confirmar descarga", "who": "Responsável pela operação", "why": "Concluir entrega conforme exigência do destino", "where": "E-mail, WhatsApp ou canal do cliente; confirmação por WhatsApp", "when": "Antes da chegada e no término da descarga", "how": "Solicitar/confirmar janela se exigida; reagendar quando perdida; confirmar descarga por WhatsApp; recorte: Confirmação após a descarga; não há execução física detalhada da descarga no PDF.", "qty": "Sem custo específico mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-036</bpmn:incoming>
+      <bpmn:incoming>fluxo-037</bpmn:incoming>
+      <bpmn:outgoing>fluxo-038</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-entregar-documentos-retorno" name="Entregar documentos de retorno">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P14: «No retorno do motorista»
+GAPs: gap-atividade-entregar-documentos-retorno-custo
+Entrega pelo motorista ao Faturista; recepção integra a conferência seguinte.
+5W2H: {"what": "Receber documentos do retorno", "who": "Motorista", "why": "Comprovar viagem e iniciar acerto", "where": "Documentação física/digital", "when": "No retorno do motorista", "how": "Entregar CT-e, NF assinada/carimbada, comprovantes de abastecimento, despesas e demais documentos; recorte: Entrega pelo motorista ao Faturista; recepção integra a conferência seguinte.", "qty": "Sem custo direto mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-038</bpmn:incoming>
+      <bpmn:outgoing>fluxo-039</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-conferir-documentos" name="Conferir e organizar documentação">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P15: «Faturista -> Analista Administrativa»
+GAPs: gap-atividade-conferir-documentos-custo
+Inclui recebimento de P14 e entrega do conjunto à Analista Administrativa.
+5W2H: {"what": "Conferir e organizar documentação", "who": "Faturista", "why": "Garantir integridade antes da validação final", "where": "Documentos e A2O", "when": "Logo após retorno", "how": "Conferir emissão de CT-e; imprimir, reunir documentos e entregar para conferência final; recorte: Inclui recebimento de P14 e entrega do conjunto à Analista Administrativa.", "qty": "Esforço interno"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-039</bpmn:incoming>
+      <bpmn:outgoing>fluxo-040</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-lancar-cargas" name="Lançar cargas no A2O">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P16: «Assistente lança cargas;»
+GAPs: Nenhum associado
+Somente lançamento; validação e pedido de pagamento ficam com a Analista.
+5W2H: {"what": "Lançar cargas, validar acerto e pedir pagamento", "who": "Assistente Comercial", "why": "Fechar despesas da viagem e formalizar pagamento", "where": "A2O e Bitrix", "when": "Após entrega da documentação", "how": "Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Somente lançamento; validação e pedido de pagamento ficam com a Analista.", "qty": "Valor conforme acerto da viagem"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-040</bpmn:incoming>
+      <bpmn:outgoing>fluxo-041</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-validar-acerto" name="Conferir documentos e validar acerto">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P16: «Assistente lança cargas;»
+GAPs: gap-atividade-validar-acerto-sequencia; gap-atividade-validar-acerto-prazo
+Após disponibilização dos lançamentos; ordem interna representada conforme redação P16, sujeita à validação operacional. Inferência de sequência: confiança media; evidência P16 descreve lançamento seguido de conferência, sem dependência formal.
+5W2H: {"what": "Lançar cargas, validar acerto e pedir pagamento", "who": "Analista Administrativa", "why": "Fechar despesas da viagem e formalizar pagamento", "where": "A2O e Bitrix", "when": "Após entrega da documentação", "how": "Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Após disponibilização dos lançamentos; ordem interna representada conforme redação P16, sujeita à validação operacional.", "qty": "Valor conforme acerto da viagem"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-041</bpmn:incoming>
+      <bpmn:outgoing>fluxo-042</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-pedir-pagamento" name="Solicitar pagamento no Bitrix">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P16: «Assistente lança cargas;»
+GAPs: gap-atividade-pedir-pagamento-metodo
+Solicitação registrada não equivale a pagamento executado.
+5W2H: {"what": "Lançar cargas, validar acerto e pedir pagamento", "who": "Analista Administrativa", "why": "Fechar despesas da viagem e formalizar pagamento", "where": "A2O e Bitrix", "when": "Após entrega da documentação", "how": "Assistente lança cargas; Analista confere documentos, valida e abre solicitação de pagamento no Bitrix; recorte: Solicitação registrada não equivale a pagamento executado.", "qty": "Valor conforme acerto da viagem"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-042</bpmn:incoming>
+      <bpmn:outgoing>fluxo-043</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="fim-solicitacao-registrada" name="Solicitação de pagamento registrada">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.5, P16: «Assistente lança cargas;»
+GAPs: Nenhum associado
+Fronteira do acerto documentado; execução do pagamento ao prestador não detalhada.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-043</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="inicio-ciclo-faturamento" name="CT-e e ciclo comercial de faturamento">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P17: «CT-e gera título;»
+GAPs: Nenhum associado
+CT-e de P11 gera título. Agrupamento semanal, quinzenal ou conforme condição comercial; sem pressupor espera pelo acerto P16.]]></bpmn:documentation>
+      <bpmn:outgoing>fluxo-044</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="atividade-faturar-cliente" name="Faturar o cliente">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P17: «CT-e gera título;»
+GAPs: Nenhum associado
+
+5W2H: {"what": "Faturar o cliente", "who": "Faturamento", "why": "Transformar transporte em valor a receber", "where": "A2O, banco e e-mail", "when": "Semanal, quinzenal ou conforme condição comercial", "how": "CT-e gera título; agrupar CT-es em fatura, definir vencimento e enviar fatura com boleto ou instrução PIX", "qty": "Valor total dos CT-es faturados"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-044</bpmn:incoming>
+      <bpmn:outgoing>fluxo-045</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="atividade-verificar-pagamento" name="Identificar pagamento no banco">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P18: «realiza baixa manual no A2O.»
+GAPs: Nenhum associado
+Verificação no vencimento e após, se necessário.
+5W2H: {"what": "Receber, baixar e cobrar atraso", "who": "Faturamento", "why": "Realizar receita e encerrar financeiro", "where": "Banco, A2O e canais de cobrança", "when": "No vencimento e após ele, se necessário", "how": "Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Verificação no vencimento e após, se necessário.", "qty": "Saldo do título em aberto"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-045</bpmn:incoming>
+      <bpmn:incoming>fluxo-050</bpmn:incoming>
+      <bpmn:outgoing>fluxo-046</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="decisao-pagamento-identificado" name="Pagamento identificado?" gatewayDirection="Diverging">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P18: «realiza baixa manual no A2O.»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-046</bpmn:incoming>
+      <bpmn:outgoing>fluxo-047</bpmn:outgoing>
+      <bpmn:outgoing>fluxo-049</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="atividade-baixar-titulo" name="Realizar baixa manual no A2O">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P18: «realiza baixa manual no A2O.»
+GAPs: Nenhum associado
+Após identificação do crédito bancário.
+5W2H: {"what": "Receber, baixar e cobrar atraso", "who": "Faturamento", "why": "Realizar receita e encerrar financeiro", "where": "Banco, A2O e canais de cobrança", "when": "No vencimento e após ele, se necessário", "how": "Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Após identificação do crédito bancário.", "qty": "Saldo do título em aberto"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-047</bpmn:incoming>
+      <bpmn:outgoing>fluxo-048</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="fim-financeiro-cliente-encerrado" name="Recebimento e baixa concluídos">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P18: «realiza baixa manual no A2O.»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-048</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="atividade-cobrar-atraso" name="Cobrar título vencido">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P18: «realiza baixa manual no A2O.»
+GAPs: Nenhum associado
+Cobrar até regularização; não inventar cadência, limite de tentativas ou regra jurídica.
+5W2H: {"what": "Receber, baixar e cobrar atraso", "who": "Crédito e Cobrança", "why": "Realizar receita e encerrar financeiro", "where": "Banco, A2O e canais de cobrança", "when": "No vencimento e após ele, se necessário", "how": "Identificar crédito bancário; baixa manual no A2O; sem pagamento, cobrar até regularização; recorte: Cobrar até regularização; não inventar cadência, limite de tentativas ou regra jurídica.", "qty": "Saldo do título em aberto"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-049</bpmn:incoming>
+      <bpmn:outgoing>fluxo-050</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:startEvent id="inicio-rotina-jornada" name="Rotina diária / fechamento mensal">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P19: «Diariamente e no fechamento mensal»
+GAPs: Nenhum associado
+]]></bpmn:documentation>
+      <bpmn:outgoing>fluxo-051</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="atividade-controlar-jornada" name="Controlar jornada e dar suporte à frota própria">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P19: «Diariamente e no fechamento mensal»
+GAPs: gap-atividade-controlar-jornada-custo; gap-atividade-controlar-jornada-controle
+
+5W2H: {"what": "Controlar jornada e dar suporte à frota própria", "who": "Analista de Logística/Jornada", "why": "Apoiar motoristas, cumprir jornada e alimentar folha", "where": "Omnilink/Sigra, Drive, WhatsApp e Bitrix", "when": "Diariamente e no fechamento mensal", "how": "Monitorar posição, coletar informações e complementar registros; controlar folgas/CNH/licenças; baixar planilha Drive e abrir tarefa no Bitrix para DP", "qty": "Esforço interno; retrabalho não mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-051</bpmn:incoming>
+      <bpmn:outgoing>fluxo-052</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="fim-ciclo-jornada-documentado" name="Registros e tarefa para DP disponibilizados">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P19: «Diariamente e no fechamento mensal»
+GAPs: Nenhum associado
+Fim deste recorte de apoio, não fim da relação de trabalho ou da rotina recorrente.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-052</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="inicio-problema-manutencao" name="Problema relatado pelo motorista">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P20: «Motorista comunica problema e envia fotos.»
+GAPs: Nenhum associado
+Somente gatilho confirmado; não gerar fluxo preventivo a partir de etapas em validação.]]></bpmn:documentation>
+      <bpmn:outgoing>fluxo-053</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="atividade-comunicar-problema" name="Comunicar problema e enviar fotos">
+      <bpmn:documentation><![CDATA[Estado: extraido
+Evidência: F001, p.6, P20: «Motorista comunica problema e envia fotos.»
+GAPs: gap-atividade-comunicar-problema-custo
+Única ação operacional confirmada de P20; apoio administrativo citado, mas sequência não validada.
+5W2H: {"what": "Tratar manutenção e documentação de manutenção", "who": "Motorista", "why": "Manter veículo seguro e disponível", "where": "WhatsApp confirmado; Bitrix e sistemas em validação", "when": "Confirmado: motorista informa problema; rotinas preventivas ainda não validadas (p.2 e p.11)", "how": "Confirmado: motorista comunica problema e envia fotos; preventiva/corretiva, OS, compras e liberação não validados; recorte: Única ação operacional confirmada de P20; apoio administrativo citado, mas sequência não validada.", "qty": "Variável; não mensurado"}]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-053</bpmn:incoming>
+      <bpmn:outgoing>fluxo-054</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="pendencia-detalhar-manutencao" name="[PENDÊNCIA] Fluxo de manutenção ainda não validado">
+      <bpmn:documentation><![CDATA[Estado: gap
+Evidência: F001, p.6, P20: «Motorista comunica problema e envia fotos.»
+GAPs: gap-pendencia-detalhar-manutencao-criterio; gap-pendencia-detalhar-manutencao-metodo; gap-pendencia-detalhar-manutencao-destino
+F001 p.2/p.11 prevalecem sobre menção genérica a rotinas preventivas na linha P20; não modelar OS/compras/aprovação/pagamento/liberação como fatos.
+Tarefa documental de pendência: não representa execução comprovada.]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-054</bpmn:incoming>
+      <bpmn:outgoing>fluxo-recorte-pendencia-detalhar-manutencao</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="fim-recorte-pendencia-modalidade-acompanhamento" name="Fim do recorte documental — pendente">
+      <bpmn:documentation><![CDATA[Término exclusivamente documental, acrescentado na conversão para BPMN. O processo real após a pendência não foi validado. Origem: pendencia-modalidade-acompanhamento]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-recorte-pendencia-modalidade-acompanhamento</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="fim-recorte-pendencia-detalhar-manutencao" name="Fim do recorte documental — pendente">
+      <bpmn:documentation><![CDATA[Término exclusivamente documental, acrescentado na conversão para BPMN. O processo real após a pendência não foi validado. Origem: pendencia-detalhar-manutencao]]></bpmn:documentation>
+      <bpmn:incoming>fluxo-recorte-pendencia-detalhar-manutencao</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="fluxo-001" sourceRef="inicio-demanda" targetRef="atividade-captar-cargas"/>
+    <bpmn:sequenceFlow id="fluxo-002" sourceRef="atividade-captar-cargas" targetRef="decisao-operacao-tanque"/>
+    <bpmn:sequenceFlow id="fluxo-003" sourceRef="decisao-operacao-tanque" targetRef="atividade-avaliar-viabilidade-geral" name="Não">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-004" sourceRef="decisao-operacao-tanque" targetRef="atividade-avaliar-viabilidade-tanque" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-005" sourceRef="atividade-avaliar-viabilidade-geral" targetRef="decisao-margem-minima"/>
+    <bpmn:sequenceFlow id="fluxo-006" sourceRef="atividade-avaliar-viabilidade-tanque" targetRef="decisao-margem-minima"/>
+    <bpmn:sequenceFlow id="fluxo-007" sourceRef="decisao-margem-minima" targetRef="fim-frete-nao-fechado" name="Não: abaixo de 40%">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não: abaixo de 40%]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-008" sourceRef="decisao-margem-minima" targetRef="atividade-definir-frota" name="Sim: ≥40%">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim: ≥40%]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-009" sourceRef="atividade-definir-frota" targetRef="decisao-terceirizar"/>
+    <bpmn:sequenceFlow id="fluxo-010" sourceRef="decisao-terceirizar" targetRef="atividade-buscar-terceiro" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-011" sourceRef="decisao-terceirizar" targetRef="atividade-repassar-operacao" name="Não: frota própria definida">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não: frota própria definida]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-012" sourceRef="atividade-buscar-terceiro" targetRef="atividade-repassar-operacao" name="Carga e veículo definidos">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Carga e veículo definidos]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-013" sourceRef="atividade-repassar-operacao" targetRef="decisao-programar-terceiro"/>
+    <bpmn:sequenceFlow id="fluxo-014" sourceRef="decisao-programar-terceiro" targetRef="atividade-consultar-risco" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-019" sourceRef="decisao-programar-terceiro" targetRef="atividade-programar-frota" name="Não">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-015" sourceRef="atividade-consultar-risco" targetRef="decisao-impedimento-risco"/>
+    <bpmn:sequenceFlow id="fluxo-016" sourceRef="decisao-impedimento-risco" targetRef="fim-operacao-impedida" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-017" sourceRef="decisao-impedimento-risco" targetRef="atividade-cadastrar-a2o" name="Não / aprovação">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não / aprovação]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-018" sourceRef="atividade-cadastrar-a2o" targetRef="atividade-programar-terceiro"/>
+    <bpmn:sequenceFlow id="fluxo-020" sourceRef="atividade-programar-terceiro" targetRef="decisao-ordem-combustivel"/>
+    <bpmn:sequenceFlow id="fluxo-021" sourceRef="atividade-programar-frota" targetRef="decisao-ordem-combustivel"/>
+    <bpmn:sequenceFlow id="fluxo-022" sourceRef="decisao-ordem-combustivel" targetRef="atividade-enviar-ordem-geral" name="Não">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-023" sourceRef="decisao-ordem-combustivel" targetRef="atividade-enviar-ordem-combustivel" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-024" sourceRef="atividade-enviar-ordem-geral" targetRef="atividade-carregar"/>
+    <bpmn:sequenceFlow id="fluxo-025" sourceRef="atividade-enviar-ordem-combustivel" targetRef="atividade-carregar"/>
+    <bpmn:sequenceFlow id="fluxo-026" sourceRef="atividade-carregar" targetRef="decisao-documentos-combustivel"/>
+    <bpmn:sequenceFlow id="fluxo-027" sourceRef="decisao-documentos-combustivel" targetRef="atividade-emitir-documentos-combustivel" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-028" sourceRef="decisao-documentos-combustivel" targetRef="atividade-emitir-documentos-demais" name="Não: terceiros e demais frota">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não: terceiros e demais frota]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-030" sourceRef="atividade-emitir-documentos-combustivel" targetRef="decisao-acompanhamento-modalidade"/>
+    <bpmn:sequenceFlow id="fluxo-029" sourceRef="atividade-emitir-documentos-demais" targetRef="decisao-acompanhamento-modalidade"/>
+    <bpmn:sequenceFlow id="fluxo-031" sourceRef="decisao-acompanhamento-modalidade" targetRef="atividade-acompanhar-terceiros-sider" name="Terceiros / Sider">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Terceiros / Sider]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-032" sourceRef="decisao-acompanhamento-modalidade" targetRef="atividade-acompanhar-tanque" name="Tanque / combustível">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Tanque / combustível]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-055" sourceRef="decisao-acompanhamento-modalidade" targetRef="pendencia-modalidade-acompanhamento" name="Outra modalidade, se existir [GAP]">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Outra modalidade, se existir [GAP]]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-033" sourceRef="atividade-acompanhar-terceiros-sider" targetRef="decisao-janela-exigida" name="Antes da chegada">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Antes da chegada]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-034" sourceRef="atividade-acompanhar-tanque" targetRef="decisao-janela-exigida" name="Antes da chegada">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Antes da chegada]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-035" sourceRef="decisao-janela-exigida" targetRef="atividade-agendar-janela" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-036" sourceRef="decisao-janela-exigida" targetRef="atividade-confirmar-descarga" name="Não: após descarga">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não: após descarga]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-037" sourceRef="atividade-agendar-janela" targetRef="atividade-confirmar-descarga" name="Após descarga; reagendar se necessário">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Após descarga; reagendar se necessário]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-038" sourceRef="atividade-confirmar-descarga" targetRef="atividade-entregar-documentos-retorno" name="No retorno do motorista">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: No retorno do motorista]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-039" sourceRef="atividade-entregar-documentos-retorno" targetRef="atividade-conferir-documentos"/>
+    <bpmn:sequenceFlow id="fluxo-040" sourceRef="atividade-conferir-documentos" targetRef="atividade-lancar-cargas"/>
+    <bpmn:sequenceFlow id="fluxo-041" sourceRef="atividade-lancar-cargas" targetRef="atividade-validar-acerto"/>
+    <bpmn:sequenceFlow id="fluxo-042" sourceRef="atividade-validar-acerto" targetRef="atividade-pedir-pagamento"/>
+    <bpmn:sequenceFlow id="fluxo-043" sourceRef="atividade-pedir-pagamento" targetRef="fim-solicitacao-registrada"/>
+    <bpmn:sequenceFlow id="fluxo-044" sourceRef="inicio-ciclo-faturamento" targetRef="atividade-faturar-cliente"/>
+    <bpmn:sequenceFlow id="fluxo-045" sourceRef="atividade-faturar-cliente" targetRef="atividade-verificar-pagamento" name="No vencimento / conforme condição">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: No vencimento / conforme condição]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-046" sourceRef="atividade-verificar-pagamento" targetRef="decisao-pagamento-identificado"/>
+    <bpmn:sequenceFlow id="fluxo-047" sourceRef="decisao-pagamento-identificado" targetRef="atividade-baixar-titulo" name="Sim">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Sim]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-049" sourceRef="decisao-pagamento-identificado" targetRef="atividade-cobrar-atraso" name="Não: título vencido">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Não: título vencido]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-048" sourceRef="atividade-baixar-titulo" targetRef="fim-financeiro-cliente-encerrado"/>
+    <bpmn:sequenceFlow id="fluxo-050" sourceRef="atividade-cobrar-atraso" targetRef="atividade-verificar-pagamento" name="Até regularização">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Até regularização]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-051" sourceRef="inicio-rotina-jornada" targetRef="atividade-controlar-jornada"/>
+    <bpmn:sequenceFlow id="fluxo-052" sourceRef="atividade-controlar-jornada" targetRef="fim-ciclo-jornada-documentado" name="No fechamento mensal">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: No fechamento mensal]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-053" sourceRef="inicio-problema-manutencao" targetRef="atividade-comunicar-problema"/>
+    <bpmn:sequenceFlow id="fluxo-054" sourceRef="atividade-comunicar-problema" targetRef="pendencia-detalhar-manutencao"/>
+    <bpmn:sequenceFlow id="fluxo-recorte-pendencia-modalidade-acompanhamento" sourceRef="pendencia-modalidade-acompanhamento" targetRef="fim-recorte-pendencia-modalidade-acompanhamento" name="Limite documental; não comprova conclusão">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Limite documental; não comprova conclusão]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="fluxo-recorte-pendencia-detalhar-manutencao" sourceRef="pendencia-detalhar-manutencao" targetRef="fim-recorte-pendencia-detalhar-manutencao" name="Limite documental; não comprova conclusão">
+      <bpmn:documentation><![CDATA[Condição/rótulo documental: Limite documental; não comprova conclusão]]></bpmn:documentation>
+    </bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration_Transportadora">
+    <bpmn:participant id="Participant_Transportadora" name="Transportadora — AS-IS" processRef="Process_Transportadora"/>
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram_Transportadora">
+    <bpmndi:BPMNPlane id="Plane_Transportadora" bpmnElement="Collaboration_Transportadora">
+      <bpmndi:BPMNShape id="Shape_Participant_Transportadora" bpmnElement="Participant_Transportadora" isHorizontal="true">
+        <dc:Bounds x="10" y="110" width="14530" height="2880"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-supervisor" bpmnElement="raia-supervisor" isHorizontal="true">
+        <dc:Bounds x="40" y="110" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-faturista-gerente" bpmnElement="raia-faturista-gerente" isHorizontal="true">
+        <dc:Bounds x="40" y="350" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-assistente" bpmnElement="raia-assistente" isHorizontal="true">
+        <dc:Bounds x="40" y="590" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-faturista" bpmnElement="raia-faturista" isHorizontal="true">
+        <dc:Bounds x="40" y="830" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-motorista-embarcador" bpmnElement="raia-motorista-embarcador" isHorizontal="true">
+        <dc:Bounds x="40" y="1070" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-operacao" bpmnElement="raia-operacao" isHorizontal="true">
+        <dc:Bounds x="40" y="1310" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-motorista" bpmnElement="raia-motorista" isHorizontal="true">
+        <dc:Bounds x="40" y="1550" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-analista-administrativa" bpmnElement="raia-analista-administrativa" isHorizontal="true">
+        <dc:Bounds x="40" y="1790" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-faturamento" bpmnElement="raia-faturamento" isHorizontal="true">
+        <dc:Bounds x="40" y="2030" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-credito-cobranca" bpmnElement="raia-credito-cobranca" isHorizontal="true">
+        <dc:Bounds x="40" y="2270" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-jornada" bpmnElement="raia-jornada" isHorizontal="true">
+        <dc:Bounds x="40" y="2510" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_raia-manutencao" bpmnElement="raia-manutencao" isHorizontal="true">
+        <dc:Bounds x="40" y="2750" width="14500" height="240"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_inicio-demanda" bpmnElement="inicio-demanda">
+        <dc:Bounds x="332.0" y="212.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="245" y="253" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-captar-cargas" bpmnElement="atividade-captar-cargas">
+        <dc:Bounds x="540.0" y="170.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-operacao-tanque" bpmnElement="decisao-operacao-tanque">
+        <dc:Bounds x="860.0" y="180.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-avaliar-viabilidade-geral" bpmnElement="atividade-avaliar-viabilidade-geral">
+        <dc:Bounds x="1100.0" y="170.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-avaliar-viabilidade-tanque" bpmnElement="atividade-avaliar-viabilidade-tanque">
+        <dc:Bounds x="1380.0" y="410.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-margem-minima" bpmnElement="decisao-margem-minima">
+        <dc:Bounds x="1700.0" y="180.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-frete-nao-fechado" bpmnElement="fim-frete-nao-fechado">
+        <dc:Bounds x="2012.0" y="212.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1925" y="253" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-definir-frota" bpmnElement="atividade-definir-frota">
+        <dc:Bounds x="2220.0" y="170.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-terceirizar" bpmnElement="decisao-terceirizar">
+        <dc:Bounds x="2540.0" y="180.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-buscar-terceiro" bpmnElement="atividade-buscar-terceiro">
+        <dc:Bounds x="2780.0" y="170.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-repassar-operacao" bpmnElement="atividade-repassar-operacao">
+        <dc:Bounds x="3060.0" y="170.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-programar-terceiro" bpmnElement="decisao-programar-terceiro">
+        <dc:Bounds x="3380.0" y="660.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-consultar-risco" bpmnElement="atividade-consultar-risco">
+        <dc:Bounds x="3620.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-impedimento-risco" bpmnElement="decisao-impedimento-risco">
+        <dc:Bounds x="3940.0" y="660.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-operacao-impedida" bpmnElement="fim-operacao-impedida">
+        <dc:Bounds x="4252.0" y="692.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="4165" y="733" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-cadastrar-a2o" bpmnElement="atividade-cadastrar-a2o">
+        <dc:Bounds x="4460.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-programar-terceiro" bpmnElement="atividade-programar-terceiro">
+        <dc:Bounds x="4740.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-programar-frota" bpmnElement="atividade-programar-frota">
+        <dc:Bounds x="5020.0" y="890.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-ordem-combustivel" bpmnElement="decisao-ordem-combustivel">
+        <dc:Bounds x="5340.0" y="660.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-enviar-ordem-geral" bpmnElement="atividade-enviar-ordem-geral">
+        <dc:Bounds x="5580.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-enviar-ordem-combustivel" bpmnElement="atividade-enviar-ordem-combustivel">
+        <dc:Bounds x="5860.0" y="890.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-carregar" bpmnElement="atividade-carregar">
+        <dc:Bounds x="6140.0" y="1130.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-documentos-combustivel" bpmnElement="decisao-documentos-combustivel">
+        <dc:Bounds x="6460.0" y="660.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-emitir-documentos-combustivel" bpmnElement="atividade-emitir-documentos-combustivel">
+        <dc:Bounds x="6700.0" y="890.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-emitir-documentos-demais" bpmnElement="atividade-emitir-documentos-demais">
+        <dc:Bounds x="6980.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-acompanhamento-modalidade" bpmnElement="decisao-acompanhamento-modalidade">
+        <dc:Bounds x="7300.0" y="660.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-acompanhar-terceiros-sider" bpmnElement="atividade-acompanhar-terceiros-sider">
+        <dc:Bounds x="7540.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-acompanhar-tanque" bpmnElement="atividade-acompanhar-tanque">
+        <dc:Bounds x="7820.0" y="890.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_pendencia-modalidade-acompanhamento" bpmnElement="pendencia-modalidade-acompanhamento">
+        <dc:Bounds x="8100.0" y="1370.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-janela-exigida" bpmnElement="decisao-janela-exigida">
+        <dc:Bounds x="8420.0" y="1380.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-agendar-janela" bpmnElement="atividade-agendar-janela">
+        <dc:Bounds x="8660.0" y="1370.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-confirmar-descarga" bpmnElement="atividade-confirmar-descarga">
+        <dc:Bounds x="8940.0" y="1370.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-entregar-documentos-retorno" bpmnElement="atividade-entregar-documentos-retorno">
+        <dc:Bounds x="9220.0" y="1610.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-conferir-documentos" bpmnElement="atividade-conferir-documentos">
+        <dc:Bounds x="9500.0" y="890.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-lancar-cargas" bpmnElement="atividade-lancar-cargas">
+        <dc:Bounds x="9780.0" y="650.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-validar-acerto" bpmnElement="atividade-validar-acerto">
+        <dc:Bounds x="10060.0" y="1850.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-pedir-pagamento" bpmnElement="atividade-pedir-pagamento">
+        <dc:Bounds x="10340.0" y="1850.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-solicitacao-registrada" bpmnElement="fim-solicitacao-registrada">
+        <dc:Bounds x="10692.0" y="1892.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="10605" y="1933" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_inicio-ciclo-faturamento" bpmnElement="inicio-ciclo-faturamento">
+        <dc:Bounds x="10972.0" y="2132.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="10885" y="2173" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-faturar-cliente" bpmnElement="atividade-faturar-cliente">
+        <dc:Bounds x="11180.0" y="2090.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-verificar-pagamento" bpmnElement="atividade-verificar-pagamento">
+        <dc:Bounds x="11460.0" y="2090.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_decisao-pagamento-identificado" bpmnElement="decisao-pagamento-identificado">
+        <dc:Bounds x="11780.0" y="2100.0" width="100" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-baixar-titulo" bpmnElement="atividade-baixar-titulo">
+        <dc:Bounds x="12020.0" y="2090.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-financeiro-cliente-encerrado" bpmnElement="fim-financeiro-cliente-encerrado">
+        <dc:Bounds x="12372.0" y="2132.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="12285" y="2173" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-cobrar-atraso" bpmnElement="atividade-cobrar-atraso">
+        <dc:Bounds x="12580.0" y="2330.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_inicio-rotina-jornada" bpmnElement="inicio-rotina-jornada">
+        <dc:Bounds x="12932.0" y="2612.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="12845" y="2653" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-controlar-jornada" bpmnElement="atividade-controlar-jornada">
+        <dc:Bounds x="13140.0" y="2570.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-ciclo-jornada-documentado" bpmnElement="fim-ciclo-jornada-documentado">
+        <dc:Bounds x="13492.0" y="2612.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="13405" y="2653" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_inicio-problema-manutencao" bpmnElement="inicio-problema-manutencao">
+        <dc:Bounds x="13772.0" y="1652.0" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="13685" y="1693" width="210" height="42"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_atividade-comunicar-problema" bpmnElement="atividade-comunicar-problema">
+        <dc:Bounds x="13980.0" y="1610.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_pendencia-detalhar-manutencao" bpmnElement="pendencia-detalhar-manutencao">
+        <dc:Bounds x="14260.0" y="2810.0" width="180" height="120"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-recorte-pendencia-modalidade-acompanhamento" bpmnElement="fim-recorte-pendencia-modalidade-acompanhamento">
+        <dc:Bounds x="8172" y="1502" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8215" y="1502" width="190" height="36"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fim-recorte-pendencia-detalhar-manutencao" bpmnElement="fim-recorte-pendencia-detalhar-manutencao">
+        <dc:Bounds x="14332" y="2942" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="14375" y="2942" width="190" height="36"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_fluxo-001" bpmnElement="fluxo-001">
+        <di:waypoint x="368.0" y="230"/>
+        <di:waypoint x="490.0" y="230"/>
+        <di:waypoint x="540.0" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-002" bpmnElement="fluxo-002">
+        <di:waypoint x="720.0" y="230"/>
+        <di:waypoint x="770.0" y="230"/>
+        <di:waypoint x="860.0" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-003" bpmnElement="fluxo-003">
+        <di:waypoint x="960.0" y="230"/>
+        <di:waypoint x="1050.0" y="230"/>
+        <di:waypoint x="1100.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="966.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-004" bpmnElement="fluxo-004">
+        <di:waypoint x="960.0" y="230"/>
+        <di:waypoint x="1030" y="230"/>
+        <di:waypoint x="1030" y="3020"/>
+        <di:waypoint x="1590" y="3020"/>
+        <di:waypoint x="1590" y="470"/>
+        <di:waypoint x="1560.0" y="470"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="966.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-005" bpmnElement="fluxo-005">
+        <di:waypoint x="1280.0" y="230"/>
+        <di:waypoint x="1310" y="230"/>
+        <di:waypoint x="1310" y="3044"/>
+        <di:waypoint x="1870" y="3044"/>
+        <di:waypoint x="1870" y="230"/>
+        <di:waypoint x="1800.0" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-006" bpmnElement="fluxo-006">
+        <di:waypoint x="1560.0" y="470"/>
+        <di:waypoint x="1610.0" y="470"/>
+        <di:waypoint x="1610.0" y="230"/>
+        <di:waypoint x="1700.0" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-007" bpmnElement="fluxo-007">
+        <di:waypoint x="1800.0" y="230"/>
+        <di:waypoint x="1890.0" y="230"/>
+        <di:waypoint x="2012.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1806.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-008" bpmnElement="fluxo-008">
+        <di:waypoint x="1800.0" y="230"/>
+        <di:waypoint x="1870" y="230"/>
+        <di:waypoint x="1870" y="3068"/>
+        <di:waypoint x="2430" y="3068"/>
+        <di:waypoint x="2430" y="230"/>
+        <di:waypoint x="2400.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1806.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-009" bpmnElement="fluxo-009">
+        <di:waypoint x="2400.0" y="230"/>
+        <di:waypoint x="2450.0" y="230"/>
+        <di:waypoint x="2540.0" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-010" bpmnElement="fluxo-010">
+        <di:waypoint x="2640.0" y="230"/>
+        <di:waypoint x="2730.0" y="230"/>
+        <di:waypoint x="2780.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2646.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-011" bpmnElement="fluxo-011">
+        <di:waypoint x="2640.0" y="230"/>
+        <di:waypoint x="2710" y="230"/>
+        <di:waypoint x="2710" y="3092"/>
+        <di:waypoint x="3270" y="3092"/>
+        <di:waypoint x="3270" y="230"/>
+        <di:waypoint x="3240.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2646.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-012" bpmnElement="fluxo-012">
+        <di:waypoint x="2960.0" y="230"/>
+        <di:waypoint x="3010.0" y="230"/>
+        <di:waypoint x="3060.0" y="230"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2966.0" y="192" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-013" bpmnElement="fluxo-013">
+        <di:waypoint x="3240.0" y="230"/>
+        <di:waypoint x="3290.0" y="230"/>
+        <di:waypoint x="3290.0" y="710"/>
+        <di:waypoint x="3380.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-014" bpmnElement="fluxo-014">
+        <di:waypoint x="3480.0" y="710"/>
+        <di:waypoint x="3570.0" y="710"/>
+        <di:waypoint x="3620.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3486.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-019" bpmnElement="fluxo-019">
+        <di:waypoint x="3480.0" y="710"/>
+        <di:waypoint x="3550" y="710"/>
+        <di:waypoint x="3550" y="3116"/>
+        <di:waypoint x="5230" y="3116"/>
+        <di:waypoint x="5230" y="950"/>
+        <di:waypoint x="5200.0" y="950"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3486.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-015" bpmnElement="fluxo-015">
+        <di:waypoint x="3800.0" y="710"/>
+        <di:waypoint x="3850.0" y="710"/>
+        <di:waypoint x="3940.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-016" bpmnElement="fluxo-016">
+        <di:waypoint x="4040.0" y="710"/>
+        <di:waypoint x="4130.0" y="710"/>
+        <di:waypoint x="4252.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="4046.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-017" bpmnElement="fluxo-017">
+        <di:waypoint x="4040.0" y="710"/>
+        <di:waypoint x="4110" y="710"/>
+        <di:waypoint x="4110" y="3140"/>
+        <di:waypoint x="4670" y="3140"/>
+        <di:waypoint x="4670" y="710"/>
+        <di:waypoint x="4640.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="4046.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-018" bpmnElement="fluxo-018">
+        <di:waypoint x="4640.0" y="710"/>
+        <di:waypoint x="4690.0" y="710"/>
+        <di:waypoint x="4740.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-020" bpmnElement="fluxo-020">
+        <di:waypoint x="4920.0" y="710"/>
+        <di:waypoint x="4950" y="710"/>
+        <di:waypoint x="4950" y="3164"/>
+        <di:waypoint x="5510" y="3164"/>
+        <di:waypoint x="5510" y="710"/>
+        <di:waypoint x="5440.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-021" bpmnElement="fluxo-021">
+        <di:waypoint x="5200.0" y="950"/>
+        <di:waypoint x="5250.0" y="950"/>
+        <di:waypoint x="5250.0" y="710"/>
+        <di:waypoint x="5340.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-022" bpmnElement="fluxo-022">
+        <di:waypoint x="5440.0" y="710"/>
+        <di:waypoint x="5530.0" y="710"/>
+        <di:waypoint x="5580.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="5446.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-023" bpmnElement="fluxo-023">
+        <di:waypoint x="5440.0" y="710"/>
+        <di:waypoint x="5510" y="710"/>
+        <di:waypoint x="5510" y="3188"/>
+        <di:waypoint x="6070" y="3188"/>
+        <di:waypoint x="6070" y="950"/>
+        <di:waypoint x="6040.0" y="950"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="5446.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-024" bpmnElement="fluxo-024">
+        <di:waypoint x="5760.0" y="710"/>
+        <di:waypoint x="5790" y="710"/>
+        <di:waypoint x="5790" y="3212"/>
+        <di:waypoint x="6350" y="3212"/>
+        <di:waypoint x="6350" y="1190"/>
+        <di:waypoint x="6320.0" y="1190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-025" bpmnElement="fluxo-025">
+        <di:waypoint x="6040.0" y="950"/>
+        <di:waypoint x="6090.0" y="950"/>
+        <di:waypoint x="6090.0" y="1190"/>
+        <di:waypoint x="6140.0" y="1190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-026" bpmnElement="fluxo-026">
+        <di:waypoint x="6320.0" y="1190"/>
+        <di:waypoint x="6370.0" y="1190"/>
+        <di:waypoint x="6370.0" y="710"/>
+        <di:waypoint x="6460.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-027" bpmnElement="fluxo-027">
+        <di:waypoint x="6560.0" y="710"/>
+        <di:waypoint x="6650.0" y="710"/>
+        <di:waypoint x="6650.0" y="950"/>
+        <di:waypoint x="6700.0" y="950"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="6566.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-028" bpmnElement="fluxo-028">
+        <di:waypoint x="6560.0" y="710"/>
+        <di:waypoint x="6630" y="710"/>
+        <di:waypoint x="6630" y="3236"/>
+        <di:waypoint x="7190" y="3236"/>
+        <di:waypoint x="7190" y="710"/>
+        <di:waypoint x="7160.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="6566.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-030" bpmnElement="fluxo-030">
+        <di:waypoint x="6880.0" y="950"/>
+        <di:waypoint x="6910" y="950"/>
+        <di:waypoint x="6910" y="3260"/>
+        <di:waypoint x="7470" y="3260"/>
+        <di:waypoint x="7470" y="710"/>
+        <di:waypoint x="7400.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-029" bpmnElement="fluxo-029">
+        <di:waypoint x="7160.0" y="710"/>
+        <di:waypoint x="7210.0" y="710"/>
+        <di:waypoint x="7300.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-031" bpmnElement="fluxo-031">
+        <di:waypoint x="7400.0" y="710"/>
+        <di:waypoint x="7490.0" y="710"/>
+        <di:waypoint x="7540.0" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="7406.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-032" bpmnElement="fluxo-032">
+        <di:waypoint x="7400.0" y="710"/>
+        <di:waypoint x="7470" y="710"/>
+        <di:waypoint x="7470" y="3284"/>
+        <di:waypoint x="8030" y="3284"/>
+        <di:waypoint x="8030" y="950"/>
+        <di:waypoint x="8000.0" y="950"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="7406.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-055" bpmnElement="fluxo-055">
+        <di:waypoint x="7400.0" y="710"/>
+        <di:waypoint x="7470" y="710"/>
+        <di:waypoint x="7470" y="3308"/>
+        <di:waypoint x="8310" y="3308"/>
+        <di:waypoint x="8310" y="1430"/>
+        <di:waypoint x="8280.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="7406.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-033" bpmnElement="fluxo-033">
+        <di:waypoint x="7720.0" y="710"/>
+        <di:waypoint x="7750" y="710"/>
+        <di:waypoint x="7750" y="3332"/>
+        <di:waypoint x="8590" y="3332"/>
+        <di:waypoint x="8590" y="1430"/>
+        <di:waypoint x="8520.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="7726.0" y="672" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-034" bpmnElement="fluxo-034">
+        <di:waypoint x="8000.0" y="950"/>
+        <di:waypoint x="8030" y="950"/>
+        <di:waypoint x="8030" y="3356"/>
+        <di:waypoint x="8590" y="3356"/>
+        <di:waypoint x="8590" y="1430"/>
+        <di:waypoint x="8520.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8006.0" y="912" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-035" bpmnElement="fluxo-035">
+        <di:waypoint x="8520.0" y="1430"/>
+        <di:waypoint x="8610.0" y="1430"/>
+        <di:waypoint x="8660.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8526.0" y="1392" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-036" bpmnElement="fluxo-036">
+        <di:waypoint x="8520.0" y="1430"/>
+        <di:waypoint x="8590" y="1430"/>
+        <di:waypoint x="8590" y="3380"/>
+        <di:waypoint x="9150" y="3380"/>
+        <di:waypoint x="9150" y="1430"/>
+        <di:waypoint x="9120.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8526.0" y="1392" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-037" bpmnElement="fluxo-037">
+        <di:waypoint x="8840.0" y="1430"/>
+        <di:waypoint x="8890.0" y="1430"/>
+        <di:waypoint x="8940.0" y="1430"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8846.0" y="1392" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-038" bpmnElement="fluxo-038">
+        <di:waypoint x="9120.0" y="1430"/>
+        <di:waypoint x="9170.0" y="1430"/>
+        <di:waypoint x="9170.0" y="1670"/>
+        <di:waypoint x="9220.0" y="1670"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="9126.0" y="1392" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-039" bpmnElement="fluxo-039">
+        <di:waypoint x="9400.0" y="1670"/>
+        <di:waypoint x="9450.0" y="1670"/>
+        <di:waypoint x="9450.0" y="950"/>
+        <di:waypoint x="9500.0" y="950"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-040" bpmnElement="fluxo-040">
+        <di:waypoint x="9680.0" y="950"/>
+        <di:waypoint x="9730.0" y="950"/>
+        <di:waypoint x="9730.0" y="710"/>
+        <di:waypoint x="9780.0" y="710"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-041" bpmnElement="fluxo-041">
+        <di:waypoint x="9960.0" y="710"/>
+        <di:waypoint x="10010.0" y="710"/>
+        <di:waypoint x="10010.0" y="1910"/>
+        <di:waypoint x="10060.0" y="1910"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-042" bpmnElement="fluxo-042">
+        <di:waypoint x="10240.0" y="1910"/>
+        <di:waypoint x="10290.0" y="1910"/>
+        <di:waypoint x="10340.0" y="1910"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-043" bpmnElement="fluxo-043">
+        <di:waypoint x="10520.0" y="1910"/>
+        <di:waypoint x="10570.0" y="1910"/>
+        <di:waypoint x="10692.0" y="1910"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-044" bpmnElement="fluxo-044">
+        <di:waypoint x="11008.0" y="2150"/>
+        <di:waypoint x="11130.0" y="2150"/>
+        <di:waypoint x="11180.0" y="2150"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-045" bpmnElement="fluxo-045">
+        <di:waypoint x="11360.0" y="2150"/>
+        <di:waypoint x="11410.0" y="2150"/>
+        <di:waypoint x="11460.0" y="2150"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="11366.0" y="2112" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-046" bpmnElement="fluxo-046">
+        <di:waypoint x="11640.0" y="2150"/>
+        <di:waypoint x="11690.0" y="2150"/>
+        <di:waypoint x="11780.0" y="2150"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-047" bpmnElement="fluxo-047">
+        <di:waypoint x="11880.0" y="2150"/>
+        <di:waypoint x="11970.0" y="2150"/>
+        <di:waypoint x="12020.0" y="2150"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="11886.0" y="2112" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-049" bpmnElement="fluxo-049">
+        <di:waypoint x="11880.0" y="2150"/>
+        <di:waypoint x="11950" y="2150"/>
+        <di:waypoint x="11950" y="3404"/>
+        <di:waypoint x="12790" y="3404"/>
+        <di:waypoint x="12790" y="2390"/>
+        <di:waypoint x="12760.0" y="2390"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="11886.0" y="2112" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-048" bpmnElement="fluxo-048">
+        <di:waypoint x="12200.0" y="2150"/>
+        <di:waypoint x="12250.0" y="2150"/>
+        <di:waypoint x="12372.0" y="2150"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-050" bpmnElement="fluxo-050">
+        <di:waypoint x="12760.0" y="2390"/>
+        <di:waypoint x="12790" y="2390"/>
+        <di:waypoint x="12790" y="3428"/>
+        <di:waypoint x="11670" y="3428"/>
+        <di:waypoint x="11670" y="2150"/>
+        <di:waypoint x="11640.0" y="2150"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="12766.0" y="2352" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-051" bpmnElement="fluxo-051">
+        <di:waypoint x="12968.0" y="2630"/>
+        <di:waypoint x="13090.0" y="2630"/>
+        <di:waypoint x="13140.0" y="2630"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-052" bpmnElement="fluxo-052">
+        <di:waypoint x="13320.0" y="2630"/>
+        <di:waypoint x="13370.0" y="2630"/>
+        <di:waypoint x="13492.0" y="2630"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="13326.0" y="2592" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-053" bpmnElement="fluxo-053">
+        <di:waypoint x="13808.0" y="1670"/>
+        <di:waypoint x="13930.0" y="1670"/>
+        <di:waypoint x="13980.0" y="1670"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-054" bpmnElement="fluxo-054">
+        <di:waypoint x="14160.0" y="1670"/>
+        <di:waypoint x="14210.0" y="1670"/>
+        <di:waypoint x="14210.0" y="2870"/>
+        <di:waypoint x="14260.0" y="2870"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-recorte-pendencia-modalidade-acompanhamento" bpmnElement="fluxo-recorte-pendencia-modalidade-acompanhamento">
+        <di:waypoint x="8190" y="1490.0"/>
+        <di:waypoint x="8190" y="1502.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="8196" y="1452.0" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_fluxo-recorte-pendencia-detalhar-manutencao" bpmnElement="fluxo-recorte-pendencia-detalhar-manutencao">
+        <di:waypoint x="14350" y="2930.0"/>
+        <di:waypoint x="14350" y="2942.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="14356" y="2892.0" width="200" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

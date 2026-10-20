@@ -306,3 +306,11 @@ F001 p.11 pede mensurar custos do Fretebras, CRM/base, dispositivos e integraç�
 3. Confirmar os dois encadeamentos inferidos: convergência/alçada da margem e relação entre lançamento e conferência do acerto.
 4. Validar com Comercial, Faturista, Assistente Comercial, Administrativo, Faturamento, Crédito e Cobrança, Jornada e Manutenção; atualizar POPs após aprovação.
 5. Somente se solicitado, criar TO-BE separado para as melhorias A01–A07, com custos/metas aprovados e AS-IS preservado.
+
+## Adendo — arquivo BPMN solicitado em 20/10/2026
+
+Arquivo adicional: `transportadora-as-is.bpmn`, BPMN 2.0 documental com `isExecutable="false"`, raias e BPMN-DI completo. O draw.io e o padrão visual da skill original foram preservados. Esta entrega adicional atende à solicitação posterior de BPMN e não altera a skill instalada.
+
+Conversão: 30 atividades originais como tarefas genéricas (sem presumir interação humana em sistema ou execução manual), 10 decisões exclusivas, 12 raias e 4 inícios dos recortes documentais. As duas pendências viraram tarefas explicitamente identificadas como PENDÊNCIA, cada uma seguida de um fim de recorte documental. Esses dois fins adicionais não comprovam encerramento da operação real. O BPMN possui, portanto, 32 tarefas (30 atividades + 2 pendências), 7 fins (5 originais + 2 de recorte documental) e 57 fluxos. Mantidos os mesmos 35 GAPs.
+
+Validações: conformidade com o XSD BPMN 2.0 e seus esquemas dependentes, obtidos do repositório público bpmn-io/bpmn-moddle (`resources/bpmn/xsd`); XML bem formado; IDs únicos; referências de raias, fluxos e elementos de desenho resolvidas; formas e arestas BPMN-DI completas. A validação XSD não prova correção operacional ou aprovação do processo. Abertura visual em modelador BPMN não realizada.
